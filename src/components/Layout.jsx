@@ -1,5 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import PeopleYouMayKnow from './PeopleYouMayKnow'
+import SkillsEndorsements from "./SkillsEndorsements";
 import About from './About'
 
 
@@ -13,6 +14,7 @@ function Layout() {
               <Col className="w-100">
                 {/* INSERT HERE THE COMPONENTS */}
                 {/* Div elements below are just to showcase how it would look */}
+                <SkillsEndorsements/>
                 <div
                   style={{
                     height: "100px",
