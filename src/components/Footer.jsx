@@ -7,7 +7,7 @@ const Footer = () => (
       <div className="row">
         <ul className="list-unstyled d-flex">
           <li className="ms-3 pl-4 svg">
-          ;<figure className="display-flex">
+          <figure className="display-flex">
   <li-icon
     type="linkedin-logo"
     size="21dp"
@@ -166,9 +166,7 @@ const Footer = () => (
         </div>
       </div>
       <div className="pt-3">
-        <a className=" btn button-gn service-code  mb-2 ">
-          <span className="d-inline-block svg text-muted ">Service code</span>
-        </a>
+        
         <div className="d-flex justify-content-between  svg background">
           <p className="text-muted serv ">Linkedin Corporation @ 2021.</p>
         </div>
