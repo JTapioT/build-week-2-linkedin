@@ -9,6 +9,7 @@ function SkillsEndorsements() {
             borderLeft: "2px solid lightgrey",
             borderRight: "2px solid lightgrey",
             padding: "24px",
+            backgroundColor: "white"
           }}
         >
           <div className="d-flex justify-content-between align-items-center">
@@ -75,6 +76,7 @@ function SkillsEndorsements() {
             border: "2px solid lightgrey",
             borderBottomLeftRadius: "18px",
             borderBottomRightRadius: "18px",
+            backgroundColor: "white"
           }}
         >
           <h5 className="m-0" style={{ color: "grey" }}>

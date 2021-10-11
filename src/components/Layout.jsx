@@ -15,22 +15,7 @@ function Layout() {
                 {/* INSERT HERE THE COMPONENTS */}
                 {/* Div elements below are just to showcase how it would look */}
                 <SkillsEndorsements/>
-                <div
-                  style={{
-                    height: "100px",
-                    backgroundColor: "lightgreen",
-                    borderRadius: "18px",
-                  }}
-                >
-                </div>
-                <div
-                  className="mt-3"
-                  style={{
-                    borderRadius: "18px",
-                  }}
-                >
-                  <About />
-                </div>
+                <About />
               </Col>
             </Row>
           </Col>
