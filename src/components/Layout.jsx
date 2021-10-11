@@ -1,4 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
+import PeopleYouMayKnow from './PeopleYouMayKnow'
 
 
 function Layout() {
@@ -17,7 +18,8 @@ function Layout() {
                     backgroundColor: "lightgreen",
                     borderRadius: "18px",
                   }}
-                ></div>
+                >
+                </div>
                 <div
                   className="mt-3"
                   style={{
@@ -37,11 +39,10 @@ function Layout() {
                 <div
                   style={{
                     height: "300px",
-                    backgroundColor: "green",
                     borderRadius: "18px",
                   }}
                 >
-                  Aside area
+                  <PeopleYouMayKnow />
                 </div>
                 <div
                   className="mt-3"
