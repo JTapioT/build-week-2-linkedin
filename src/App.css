@@ -3,8 +3,10 @@
   background-color: transparent;
   border: 1px solid darkgray;
   border-radius: 20px;
-  padding: 6px 16px;
-  width: fit-content;
+  padding: 4px 18px;
+  /* width: fit-content; */
+  min-width: 68px;
+  max-width: fit-content;
 }
 
 .default-btn-style:hover{
