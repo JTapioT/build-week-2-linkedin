@@ -87,7 +87,7 @@ const PeopleYouMayKnow = () => {
             <a href="#" className="text-dark">
               <h6>Cian Marckwick</h6>
             </a>
-            <p className="text-muted mb-1">Ambassador of "It's pronounced [Key-an] not [Chan]"</p>
+            <p className="text-muted mb-1">Ambassador of "It's pronounced [Key-en] not [Chan]"</p>
             <div className="default-btn-style">
               Connect
             </div>
