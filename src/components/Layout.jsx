@@ -1,5 +1,8 @@
 import { Container, Row, Col } from "react-bootstrap";
+
 import UserInfoJumbotron from "./UserInfoJumbotron";
+
+import PeopleYouMayKnow from "./PeopleYouMayKnow";
 
 function Layout() {
   return (
@@ -19,7 +22,6 @@ function Layout() {
                     borderRadius: "18px",
                   }}
                 >
-                  {" "}
                   <UserInfoJumbotron />
                 </div>
                 <div
@@ -40,12 +42,10 @@ function Layout() {
                 {/* Div elements below are just to showcase how it would look */}
                 <div
                   style={{
-                    height: "300px",
-                    backgroundColor: "green",
                     borderRadius: "18px",
                   }}
                 >
-                  Aside area
+                  <PeopleYouMayKnow />
                 </div>
                 <div
                   className="mt-3"

@@ -1,4 +1,23 @@
-/* NAVBAR NAVBAR NAVBAR */
+
+.default-btn-style{
+  background-color: transparent;
+  border: 1px solid darkgray;
+  border-radius: 20px;
+  padding: 4px 18px;
+  /* width: fit-content; */
+  min-width: 68px;
+  max-width: fit-content;
+}
+
+.default-btn-style:hover{
+  background-color: rgba(212, 212, 212, 0.3);
+  border: 1px solid rgb(78, 78, 78);
+  cursor: pointer;
+}
+
+
+
+/* NAVBAR NAVBAR NAVBAR   NAVBAR NAVBAR NAVBAR    NAVBAR NAVBAR NAVBAR    NAVBAR NAVBAR NAVBAR    NAVBAR NAVBAR NAVBAR    NAVBAR NAVBAR NAVBAR */
 /* vertical lign */
 .vl {
   border-left: 3px solid darkslategray;
@@ -8,4 +27,33 @@
 
 .search {
   max-width: 200px !important;
+}
+
+
+/*  PEOPLE YPU MAY KNOW  PEOPLE YPU MAY KNOW   PEOPLE YPU MAY KNOW  PEOPLE YPU MAY KNOW   PEOPLE YPU MAY KNOW   PEOPLE YPU MAY KNOW   PEOPLE YPU MAY KNOW */
+.brdr-linkedin {
+  border: 2px solid lightgrey;
+  height: 300px;
+  border-radius: 18px;
+  padding: 24px 16px;
+}
+
+.brdr-linkedin h5 {
+  font-size: 18px
+}
+
+.who-and-where {
+  display: flex;
+}
+
+.name-company {
+  margin-left: 10px;
+}
+
+.name-company a h6{
+  margin-bottom: 0px;
+}
+
+.name-company p {
+  font-size: 12px;
 }
