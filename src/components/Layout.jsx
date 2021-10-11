@@ -1,5 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
-
+import UserInfoJumbotron from "./UserInfoJumbotron";
 
 function Layout() {
   return (
@@ -11,13 +11,17 @@ function Layout() {
               <Col className="w-100">
                 {/* INSERT HERE THE COMPONENTS */}
                 {/* Div elements below are just to showcase how it would look */}
+
                 <div
                   style={{
                     height: "100px",
                     backgroundColor: "lightgreen",
                     borderRadius: "18px",
                   }}
-                ></div>
+                >
+                  {" "}
+                  <UserInfoJumbotron />
+                </div>
                 <div
                   className="mt-3"
                   style={{
