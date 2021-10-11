@@ -8,6 +8,8 @@ import {
   InputGroup,
   NavDropdown,
   Nav,
+  DropdownButton,
+  Dropdown
 } from "react-bootstrap";
 
 const MyNavBar = () => {
@@ -27,16 +29,7 @@ const MyNavBar = () => {
           <InputGroup.Prepend>
             <InputGroup.Text>
               <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={16}
-                  height={16}
-                  fill="currentColor"
-                  className="bi bi-search"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                </svg>
+                <i className="bi bi-search" style={{ fontSize: "16px" }}></i>
               </span>
             </InputGroup.Text>
           </InputGroup.Prepend>
@@ -50,7 +43,7 @@ const MyNavBar = () => {
           </Form>
         </InputGroup>
 
-        <div className="d-flex justify-space-around">
+        <div className="d-flex justify-space-around" style={{borderRight: "1px solid lightgrey"}}>
           <div className="d-flex flex-column mr-3 text-center">
             <i
               className="bi bi-house-door-fill"
@@ -73,7 +66,7 @@ const MyNavBar = () => {
             ></i>
             <small>Messaging</small>
           </div>
-          <div className="d-flex flex-column text-center mr-3">
+          {/*   <div className="d-flex flex-column text-center mr-3">
             <i class="bi bi-bell-fill" style={{ fontSize: "24px" }}></i>
             <small>Notification</small>
           </div>
@@ -122,6 +115,47 @@ const MyNavBar = () => {
                 </NavDropdown>
               </Nav>
             </Navbar.Collapse>
+          </div> */}
+
+          <Dropdown className="text-center mr-3">
+            <i class="bi bi-person-circle" style={{ fontSize: "24px" }}></i>
+
+            <Dropdown.Toggle
+              id="dropdown-basic"
+              as="div"
+              style={{ cursor: "pointer" }}
+              className="d-flex align-items-center"
+            >
+              <small className="p-0 m-0">Me</small>
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </div>
+        <div className="d-flex align-items-center">
+          <Dropdown className="text-center ml-3 mr-4">
+            <i class="bi bi-grid-3x3-gap-fill" style={{ fontSize: "24px" }}></i>
+
+            <Dropdown.Toggle
+              id="dropdown-basic"
+              as="div"
+              style={{ cursor: "pointer" }}
+              className="d-flex align-items-center"
+            >
+              <small className="p-0 m-0">Work</small>
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+          <div className="d-flex flex-column text-center">
+            <small className="text-muted">Retry Premium</small>
+            <small className="text-muted">Free</small>
           </div>
         </div>
       </Container>

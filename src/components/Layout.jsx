@@ -1,10 +1,9 @@
 import { Container, Row, Col } from "react-bootstrap";
-
-import PeopleYouMayKnow from "./PeopleYouMayKnow";
+import Experience from "./Experience";
+import Education from "./Education";
 import SkillsEndorsements from "./SkillsEndorsements";
 import About from "./About";
 import UserInfoJumbotron from "./UserInfoJumbotron";
-
 import PeopleYouMayKnow from "./PeopleYouMayKnow";
 
 function Layout() {
@@ -17,23 +16,9 @@ function Layout() {
               <Col className="w-100">
                 {/* INSERT HERE THE COMPONENTS */}
                 {/* Div elements below are just to showcase how it would look */}
-                <div
-                  style={{
-                    height: "100px",
-                    backgroundColor: "lightgreen",
-                    borderRadius: "18px",
-                  }}
-                >
-                  <UserInfoJumbotron />
-                </div>
-                <div
-                  className="mt-3"
-                  style={{
-                    height: "300px",
-                    backgroundColor: "lightgreen",
-                    borderRadius: "18px",
-                  }}
-                ></div>
+                <UserInfoJumbotron />
+                <Experience />
+                <Education />
                 <SkillsEndorsements />
                 <About />{" "}
               </Col>
@@ -44,33 +29,7 @@ function Layout() {
               <Col className="w-100">
                 {/* INSERT HERE THE COMPONENTS */}
                 {/* Div elements below are just to showcase how it would look */}
-                <div
-                  style={{
-                    borderRadius: "18px",
-                  }}
-                >
-                  <PeopleYouMayKnow />
-                </div>
-                <div
-                  className="mt-3"
-                  style={{
-                    height: "500px",
-                    backgroundColor: "orange",
-                    borderRadius: "18px",
-                  }}
-                >
-                  Aside area
-                </div>
-                <div
-                  className="mt-3"
-                  style={{
-                    height: "200px",
-                    backgroundColor: "orange",
-                    borderRadius: "18px",
-                  }}
-                >
-                  Aside area
-                </div>
+                <PeopleYouMayKnow />
               </Col>
             </Row>
           </Col>
