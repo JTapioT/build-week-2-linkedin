@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button'
 const PeopleYouMayKnow = () => {
     return(
-      <div className= "brdr-linkedin" style={{width:"320px", height:"575px"}}>
+      <div className= "brdr-linkedin brdr-linked-people-you-may-know" style={{width:"320px", height:"575px"}}>
         <h5>People You May Know</h5>
 
         <div className="who-and-where mb-4 mt-4">
@@ -87,7 +87,7 @@ const PeopleYouMayKnow = () => {
             <a href="#" className="text-dark">
               <h6>Cian Marckwick</h6>
             </a>
-            <p className="text-muted mb-1">Ambassador of "It's pronounced [Key-an] not [Chan]"</p>
+            <p className="text-muted mb-1">Ambassador of "It's pronounced [Key-en] not [Chan]"</p>
             <div className="default-btn-style">
               Connect
             </div>

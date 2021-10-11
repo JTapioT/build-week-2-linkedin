@@ -1,6 +1,6 @@
 import MyNavBar from "./components/MyNavBar"
 import Layout from "./components/Layout"
-import MyFooter from "./components/Footer"
+import Footer from "./components/Footer"
 
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <>
     <MyNavBar/>
     <Layout/>
-    <MyFooter />
+    <Footer />
     </>
   )
 } 
