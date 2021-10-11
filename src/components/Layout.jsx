@@ -34,7 +34,6 @@ function Layout() {
                     borderRadius: "18px",
                   }}
                 ></div>
-                =======
                 <SkillsEndorsements />
                 <About />{" "}
               </Col>
