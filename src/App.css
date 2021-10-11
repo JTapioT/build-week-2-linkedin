@@ -3,6 +3,7 @@ body {
   background-color: #F3F2EF;
 }
 
+/* default btn styling */
 .default-btn-style{
   background-color: transparent;
   border: 1px solid darkgray;
@@ -17,6 +18,15 @@ body {
   background-color: rgba(212, 212, 212, 0.3);
   border: 1px solid rgb(78, 78, 78);
   cursor: pointer;
+}
+
+/* default styling for components */
+.brdr-linkedin {
+  border: 2px solid #E9E8E5;
+  background-color: white;
+  height: 300px;
+  border-radius: 18px;
+  padding: 24px 16px;
 }
 
 
@@ -35,13 +45,6 @@ body {
 
 
 /*  PEOPLE YPU MAY KNOW  PEOPLE YPU MAY KNOW   PEOPLE YPU MAY KNOW  PEOPLE YPU MAY KNOW   PEOPLE YPU MAY KNOW   PEOPLE YPU MAY KNOW   PEOPLE YPU MAY KNOW */
-.brdr-linkedin {
-  border: 2px solid #E9E8E5;
-  background-color: white;
-  height: 300px;
-  border-radius: 18px;
-  padding: 24px 16px;
-}
 
 .brdr-linkedin h5 {
   font-size: 18px
