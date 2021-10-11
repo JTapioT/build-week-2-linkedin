@@ -4,9 +4,9 @@
   border: 1px solid darkgray;
   border-radius: 20px;
   padding: 4px 18px;
-  /* width: fit-content; */
-  min-width: 68px;
-  max-width: fit-content;
+  width: fit-content;
+  /* min-width: 68px; */
+  /* max-width: fit-content; */
 }
 
 .default-btn-style:hover{
@@ -42,6 +42,11 @@
   font-size: 18px
 }
 
+.brdr-linkedin-people-you-may-know {
+  min-width: 68px;
+  max-width: fit-content;
+}
+
 .who-and-where {
   display: flex;
 }
@@ -56,4 +61,12 @@
 
 .name-company p {
   font-size: 12px;
+}
+
+
+/* ABOUT ABOUT ABOUT */
+.overflow-height {
+  height: 100px;
+  text-overflow: ellipsis " [..]";
+  overflow: scroll;
 }

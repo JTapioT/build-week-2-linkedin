@@ -1,5 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import PeopleYouMayKnow from './PeopleYouMayKnow'
+import About from './About'
 
 
 function Layout() {
@@ -23,11 +24,11 @@ function Layout() {
                 <div
                   className="mt-3"
                   style={{
-                    height: "300px",
-                    backgroundColor: "lightgreen",
                     borderRadius: "18px",
                   }}
-                ></div>
+                >
+                  <About />
+                </div>
               </Col>
             </Row>
           </Col>
