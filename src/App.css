@@ -1,10 +1,16 @@
+body {
+  font-family:  Arial, Helvetica, sans-serif;
+  background-color: #F3F2EF;
+}
 
 .default-btn-style{
   background-color: transparent;
   border: 1px solid darkgray;
   border-radius: 20px;
-  padding: 6px 16px;
+  padding: 4px 18px;
   width: fit-content;
+  /* min-width: 68px; */
+  /* max-width: fit-content; */
 }
 
 .default-btn-style:hover{
@@ -15,7 +21,7 @@
 
 
 
-/* NAVBAR NAVBAR NAVBAR */
+/* NAVBAR NAVBAR NAVBAR   NAVBAR NAVBAR NAVBAR    NAVBAR NAVBAR NAVBAR    NAVBAR NAVBAR NAVBAR    NAVBAR NAVBAR NAVBAR    NAVBAR NAVBAR NAVBAR */
 /* vertical lign */
 .vl {
   border-left: 3px solid darkslategray;
@@ -28,9 +34,10 @@
 }
 
 
-/*  PEOPLE YPU MAY KNOW */
+/*  PEOPLE YPU MAY KNOW  PEOPLE YPU MAY KNOW   PEOPLE YPU MAY KNOW  PEOPLE YPU MAY KNOW   PEOPLE YPU MAY KNOW   PEOPLE YPU MAY KNOW   PEOPLE YPU MAY KNOW */
 .brdr-linkedin {
-  border: 2px solid lightgrey;
+  border: 2px solid #E9E8E5;
+  background-color: white;
   height: 300px;
   border-radius: 18px;
   padding: 24px 16px;
@@ -38,6 +45,11 @@
 
 .brdr-linkedin h5 {
   font-size: 18px
+}
+
+.brdr-linkedin-people-you-may-know {
+  min-width: 68px;
+  max-width: fit-content;
 }
 
 .who-and-where {
@@ -54,4 +66,12 @@
 
 .name-company p {
   font-size: 12px;
+}
+
+
+/* ABOUT ABOUT ABOUT */
+.overflow-height {
+  height: 100px;
+  text-overflow: ellipsis " [..]";
+  overflow: scroll;
 }

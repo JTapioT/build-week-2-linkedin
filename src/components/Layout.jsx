@@ -1,5 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap";
 import PeopleYouMayKnow from './PeopleYouMayKnow'
+import SkillsEndorsements from "./SkillsEndorsements";
+import About from './About'
 
 
 function Layout() {
@@ -12,22 +14,8 @@ function Layout() {
               <Col className="w-100">
                 {/* INSERT HERE THE COMPONENTS */}
                 {/* Div elements below are just to showcase how it would look */}
-                <div
-                  style={{
-                    height: "100px",
-                    backgroundColor: "lightgreen",
-                    borderRadius: "18px",
-                  }}
-                >
-                </div>
-                <div
-                  className="mt-3"
-                  style={{
-                    height: "300px",
-                    backgroundColor: "lightgreen",
-                    borderRadius: "18px",
-                  }}
-                ></div>
+                <SkillsEndorsements/>
+                <About />
               </Col>
             </Row>
           </Col>
@@ -38,7 +26,6 @@ function Layout() {
                 {/* Div elements below are just to showcase how it would look */}
                 <div
                   style={{
-                    height: "fit-content",
                     borderRadius: "18px",
                   }}
                 >
