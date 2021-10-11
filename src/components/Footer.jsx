@@ -7,7 +7,7 @@ const Footer = () => (
       <div className="row">
         <ul className="list-unstyled d-flex">
           <li className="ms-3 pl-4 svg">
-          ;<figure className="display-flex">
+          <figure className="display-flex">
   <li-icon
     type="linkedin-logo"
     size="21dp"
