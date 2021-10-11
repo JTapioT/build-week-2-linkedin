@@ -38,7 +38,7 @@ function Layout() {
                 {/* Div elements below are just to showcase how it would look */}
                 <div
                   style={{
-                    height: "300px",
+                    height: "fit-content",
                     borderRadius: "18px",
                   }}
                 >
