@@ -1,0 +1,11 @@
+/* NAVBAR NAVBAR NAVBAR */
+/* vertical lign */
+.vl {
+  border-left: 3px solid darkslategray;
+  height: 50px;
+  margin-left: 20px;
+}
+
+.search {
+  max-width: 200px !important;
+}
