@@ -6,7 +6,7 @@ body {
 /* default btn styling */
 .default-btn-style{
   background-color: transparent;
-  border: 1px solid darkgray;
+  border: 1px solid rgb(78, 78, 78);
   border-radius: 20px;
   padding: 4px 18px;
   width: fit-content;
