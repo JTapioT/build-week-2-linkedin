@@ -11,23 +11,27 @@ import AddExperience from "./components/AddExperience";
 function App() {
   return (
     <>
-    <BrowserRouter>
-    <Route path="/profile/:id" render={(props) => (
-        <>
-        <MyNavBar/>
-        <Layout {...props}/>
-        {/* <Route path="/AddExperiance" exact component={AddExperience} />  */}
-        <AddExperience/>
-        <EditExperience/>
-        <Footer />
-        </>
-      )
-    }/>
-    <Route path="/profile/:id/edit/forms/position/new" exact
-    render={() => <AddExperience/>}/>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Route
+          path="/profile/:id"
+          render={(props) => (
+            <>
+              <MyNavBar />
+              <Layout {...props} />
+              {/* <Route path="/AddExperiance" exact component={AddExperience} />  */}
+              <AddExperience />
+              <EditExperience />
+              <Footer />
+            </>
+          )}
+        />
+        <Route
+          path="/profile/:id/edit/forms/position/new"
+          render={(props) => <AddExperience {...props} />}
+        />
+      </BrowserRouter>
     </>
-  )
+  );
 } 
 
 export default App
