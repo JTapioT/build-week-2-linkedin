@@ -6,18 +6,20 @@ import About from "./About";
 import UserInfoJumbotron from "./UserInfoJumbotron";
 import PeopleYouMayKnow from "./PeopleYouMayKnow";
 
-function Layout() {
+
+function Layout(props) {
   return (
     <>
+    
+      
       <Container className="mt-5">
         <Row>
           <Col md={9}>
             <Row>
               <Col className="w-100">
                 {/* INSERT HERE THE COMPONENTS */}
-                {/* Div elements below are just to showcase how it would look */}
                 <UserInfoJumbotron />
-                <Experience />
+                <Experience id={props.match.params.id} />
                 <Education />
                 <SkillsEndorsements />
                 <About />{" "}
@@ -28,7 +30,6 @@ function Layout() {
             <Row>
               <Col className="w-100">
                 {/* INSERT HERE THE COMPONENTS */}
-                {/* Div elements below are just to showcase how it would look */}
                 <PeopleYouMayKnow />
               </Col>
             </Row>
