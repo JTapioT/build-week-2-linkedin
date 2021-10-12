@@ -4,6 +4,8 @@ import Footer from "./components/Footer"
 import { BrowserRouter, Route, useParams } from "react-router-dom";
  import AddExperience from "./components/AddExperience";
  import EditExperience from "./components/EditExperience";
+import { BrowserRouter, Route, useParams} from "react-router-dom";
+import AddExperience from "./components/AddExperience";
 
 
 function App() {
@@ -21,8 +23,8 @@ function App() {
         </>
       )
     }/>
-      {/* render={(props) => <Home title="Strive" {...props} />} */}
-      
+    <Route path="/profile/:id/edit/forms/position/new" exact
+    render={() => <AddExperience/>}/>
     </BrowserRouter>
     </>
   )
