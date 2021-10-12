@@ -76,7 +76,7 @@ function Experience(props) {
       <div className="d-flex flex-column mt-3">
         {userExperience.length ? (
           userExperience.map((experience) => {
-            return <UserExperienceDetails experience={experience} />;
+            return <UserExperienceDetails history={props.history} id={userId} experience={experience} />;
           })
         ) : (
           <div className="d-flex">

@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-function UserExperienceDetails({experience}) {
+function UserExperienceDetails({history,id,experience}) {
 
   const [penHover, setPenHover] = useState(false);
 
@@ -48,6 +48,9 @@ function UserExperienceDetails({experience}) {
         }}
         onMouseLeave={() => {
           setPenHover(false);
+        }}
+        onClick={() => {
+          history.push(`/profile/${id}/edit/forms/position/${experience._id}`);
         }}
       ></i>
     </div>

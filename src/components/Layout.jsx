@@ -10,8 +10,6 @@ import PeopleYouMayKnow from "./PeopleYouMayKnow";
 function Layout(props) {
   return (
     <>
-    
-      
       <Container className="mt-5">
         <Row>
           <Col md={9}>
@@ -19,7 +17,7 @@ function Layout(props) {
               <Col className="w-100">
                 {/* INSERT HERE THE COMPONENTS */}
                 <UserInfoJumbotron />
-                <Experience id={props.match.params.id} />
+                <Experience id={props.match.params.id} history={props.history}/>
                 <Education />
                 <SkillsEndorsements />
                 <About />{" "}
