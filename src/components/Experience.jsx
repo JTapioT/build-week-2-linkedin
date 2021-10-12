@@ -7,6 +7,7 @@ function Experience(props) {
     const [userId, setUserId] = useState(props.id);
     const [userExperience, setUserExperience] = useState([]);
     const [isExperienceIconHover, setExperienceIconHover] = useState(false);
+    const[isExperienceAddClicked, setExperienceClicked] = useState(false);
 
     const experienceIconStyle = {
       fontSize: "1.4em",
@@ -61,6 +62,8 @@ function Experience(props) {
         <h5>Experience</h5>
         <i
           class="bi bi-plus-lg"
+          data-toggle= {isExperienceAddClicked ? "modal" : null}
+          data-target={isExperienceAddClicked ? "#addExperienceModal" : null}
           style={experienceIconStyle}
           onMouseEnter={() => {
             setExperienceIconHover(true);
@@ -69,6 +72,7 @@ function Experience(props) {
             setExperienceIconHover(false);
           }}
           onClick={() => {
+            setExperienceClicked(true);
             props.history.push(`/profile/${userId}/edit/forms/position/new`);
           }}
         ></i>
