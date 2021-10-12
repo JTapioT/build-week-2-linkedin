@@ -71,6 +71,12 @@ body {
   font-size: 12px;
 }
 
+.user-img-resize {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
 
 /* ABOUT ABOUT ABOUT */
 .overflow-height {

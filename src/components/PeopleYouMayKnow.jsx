@@ -1,7 +1,48 @@
-import Button from 'react-bootstrap/Button'
+import { useEffect, useState } from "react"
+
 const PeopleYouMayKnow = () => {
+
+  const [selectedUsers, setSelectedUsers] = useState([]);
+
+  async function fetchUsers() {
+
+    try {
+      let response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile`,
+        {
+          headers: {
+            authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZWZkZmE4OTBjYzAwMTVjZjA3ZGUiLCJpYXQiOjE2MzM5Mzk0MjMsImV4cCI6MTYzNTE0OTAyM30.HvEFLHymbCxV8ciPWBxaABNQ2NmFcOxsgJ8xi1Hkmuk",
+          },
+        }
+      );
+
+      if(response.ok) {
+        let responseJson = await response.json()
+        console.log(responseJson)
+
+        const users = responseJson.map((selectedUser, index) => {
+          if(index < 5) {
+            return selectedUser
+          }
+        }).filter(Boolean)
+
+        setSelectedUsers(users)
+        console.log(selectedUsers)
+
+      }
+    } catch(error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    fetchUsers();
+  }, [])
+
+
     return(
-      <div className= "brdr-linkedin brdr-linked-people-you-may-know" style={{width:"320px", height:"575px"}}>
+      <div className= "brdr-linkedin brdr-linked-people-you-may-know" style={{width:"320px", height:"auto"}}>
         <h5>People You May Know</h5>
 
         <div className="who-and-where mb-4 mt-4">
@@ -94,6 +135,26 @@ const PeopleYouMayKnow = () => {
           </div>
         </div>
 
+        {
+          selectedUsers.length ? 
+          selectedUsers.map(user => {
+            return  ( 
+              <div className="who-and-where mb-4">
+                <div className="d-inline">
+                <img src={user.image} className="user-img-resize"/>
+              </div>
+              <div className="name-company">
+                <a href="#" className="text-dark">
+                  <h6>{user.name} {user.surname}</h6>
+                </a>
+                <p className="text-muted mb-1">{user.title}</p>
+                  <div className="default-btn-style">
+                  Connect
+                  </div>
+              </div>
+            </div>)
+          }) : null
+        }
       </div>
     )
 }
