@@ -69,14 +69,20 @@ function Experience(props) {
             setExperienceIconHover(false);
           }}
           onClick={() => {
-            props.history.push("/edit/forms/position/new");
+            props.history.push(`/profile/${userId}/edit/forms/position/new`);
           }}
         ></i>
       </div>
       <div className="d-flex flex-column mt-3">
         {userExperience.length ? (
           userExperience.map((experience) => {
-            return <UserExperienceDetails history={props.history} id={userId} experience={experience} />;
+            return (
+              <UserExperienceDetails
+                history={props.history}
+                id={userId}
+                experience={experience}
+              />
+            );
           })
         ) : (
           <div className="d-flex">
