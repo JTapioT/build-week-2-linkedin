@@ -78,3 +78,40 @@ body {
   text-overflow: ellipsis " [..]";
   overflow: scroll;
 }
+
+
+/* AddExperiancd */
+.add-Exp{
+  height: 300px;
+  text-overflow: ellipsis " [..]";
+  overflow: scroll;
+}
+
+
+
+/* Toggle */
+
+
+.artdeco-toggle.artdeco-toggle--toggled:before {
+  box-shadow: inset 0 0 0 26px var(--color-checked),0 0 0 1px var(--transparent);
+}
+.artdeco-toggle:before {
+  pointer-events: all;
+  transition: all 83ms cubic-bezier(.4,0,1,1);
+  display: block;
+  content: "";
+  position: absolute;
+  top: calc(50% - 16px);
+  right: 0;
+  background-clip: content-box;
+  border: 1px solid var(--transparent);
+  width: 52px;
+  height: 32px;
+  border-radius: 17px;
+  background-color: var(--color-element-low-emphasis-shift);
+  box-sizing: content-box;
+}
+
+.artdeco-toggle:after, .artdeco-toggle:before {
+  top: unset!important;
+}

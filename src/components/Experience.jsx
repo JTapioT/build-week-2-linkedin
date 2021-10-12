@@ -1,4 +1,5 @@
 import {useState, useEffect} from "react";
+import { Link } from "react-router-dom";
 
 function Experience(props) {
 
@@ -73,7 +74,9 @@ function Experience(props) {
               <p className="m-0">Company</p>
               <small className="m-0">Oct 2021 - Oct 2021</small>
             </div>
+            {/* <Link to={`/AddExperiance`}> */} 
             <i class="bi bi-pencil" style={{ fontSize: "20px" }}></i>
+            {/* </Link> */}
           </div>
         </div>
         {/* Occupation detail row ends */}
