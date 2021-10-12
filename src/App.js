@@ -1,11 +1,9 @@
 import MyNavBar from "./components/MyNavBar"
 import Layout from "./components/Layout"
 import Footer from "./components/Footer"
-import { BrowserRouter, Route, useParams } from "react-router-dom";
- import AddExperience from "./components/AddExperience";
- import EditExperience from "./components/EditExperience";
-import { BrowserRouter, Route, useParams} from "react-router-dom";
 import AddExperience from "./components/AddExperience";
+import EditExperience from "./components/EditExperience";
+import { BrowserRouter, Route, useParams} from "react-router-dom";
 
 
 function App() {
