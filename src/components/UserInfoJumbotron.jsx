@@ -13,8 +13,9 @@ const UserInfoJumbotron = () => {
             width: "100px",
             height: "100px",
             borderRadius: "50px",
-            top: 90,
-            position: "absolute",
+            top: 150,
+            left: 30,
+            position: "absolute"
           }}
           alt="React Bootstrap logo"
         />
@@ -51,7 +52,7 @@ const UserInfoJumbotron = () => {
                 <p>London, England, United Kingdom </p>
                 <Nav>
                   <Nav.Item>
-                    <Nav.Link>Contact Info</Nav.Link>
+                    <Nav.Link className="pl-0">Contact Info</Nav.Link>
                   </Nav.Item>
                 </Nav>
               </Col>
@@ -66,7 +67,7 @@ const UserInfoJumbotron = () => {
             <Row>
               <Nav>
                 <Nav.Item>
-                  <Nav.Link style={{ marginLeft: "7px" }}>
+                  <Nav.Link>
                     22 Connections
                   </Nav.Link>
                 </Nav.Item>
@@ -76,7 +77,8 @@ const UserInfoJumbotron = () => {
             <Row>
               <Button
                 className="btn-primary"
-                style={{ borderRadius: "20px", marginLeft: "20px" }}
+                style={{ borderRadius: "20px", marginLeft: "20px", width: "auto",
+                marginLeft: "15px"}}
                 href=""
               >
                 Open To
