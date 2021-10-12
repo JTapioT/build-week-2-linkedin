@@ -3,6 +3,7 @@ import Layout from "./components/Layout"
 import Footer from "./components/Footer"
 import { BrowserRouter, Route, useParams } from "react-router-dom";
  import AddExperience from "./components/AddExperience";
+ import EditExperience from "./components/EditExperience";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Layout {...props}/>
         {/* <Route path="/AddExperiance" exact component={AddExperience} />  */}
         <AddExperience/>
+        <EditExperience/>
         <Footer />
         </>
       )
