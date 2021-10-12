@@ -1,6 +1,7 @@
 import React from "react";
-import { Card, Row, Col, Nav } from "react-bootstrap";
+import { Card, Row, Col, Nav, Button } from "react-bootstrap";
 import ImgLinkedin from "../assets/images.jpg";
+import EditProfile from "./EditProfile";
 
 const UserInfoJumbotron = () => {
   return (
@@ -12,7 +13,7 @@ const UserInfoJumbotron = () => {
             width: "100px",
             height: "100px",
             borderRadius: "50px",
-            top: 80,
+            top: 90,
             position: "absolute",
           }}
           alt="React Bootstrap logo"
@@ -22,7 +23,23 @@ const UserInfoJumbotron = () => {
           style={{ width: "auto", height: "200px", backgroundColor: "blue" }}
           src={ImgLinkedin}
         />
-
+        {/*<Nav>
+          <Nav.Item>
+            <Nav.Link>
+              {" "}
+              <i
+                class="bi bi-pencil "
+                style={{
+                  marginTop: "10px",
+                  marginLeft: "720px",
+                  fontSize: "20px",
+                }}
+              ></i>
+              
+            </Nav.Link>
+          </Nav.Item>
+        </Nav>*/}
+        <EditProfile />
         <Card.Body>
           <Card.Text>
             <Row>
@@ -45,6 +62,39 @@ const UserInfoJumbotron = () => {
                 ></i>
                 <small>School</small>
               </Col>
+            </Row>
+            <Row>
+              <Nav>
+                <Nav.Item>
+                  <Nav.Link style={{ marginLeft: "7px" }}>
+                    22 Connections
+                  </Nav.Link>
+                </Nav.Item>
+              </Nav>
+            </Row>
+
+            <Row>
+              <Button
+                className="btn-primary"
+                style={{ borderRadius: "20px", marginLeft: "20px" }}
+                href=""
+              >
+                Open To
+              </Button>
+              <Button
+                className="default-btn-style"
+                style={{ marginLeft: "5px" }}
+                variant="outline-secondary"
+              >
+                Add Section
+              </Button>
+              <Button
+                className="default-btn-style"
+                style={{ marginLeft: "5px" }}
+                variant="outline-secondary"
+              >
+                More
+              </Button>
             </Row>
           </Card.Text>
         </Card.Body>
