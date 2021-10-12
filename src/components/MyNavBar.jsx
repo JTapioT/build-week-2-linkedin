@@ -43,29 +43,39 @@ const MyNavBar = () => {
           </Form>
         </InputGroup>
 
-        <div className="d-flex justify-space-around" style={{borderRight: "1px solid lightgrey"}}>
-          <div className="d-flex flex-column mr-3 text-center">
-            <i
-              className="bi bi-house-door-fill"
-              style={{ fontSize: "24px" }}
-            ></i>
+        <div className="d-flex justify-space-around nav-icons align-items-center"  style={{borderRight: "1px solid lightgrey", cursor: "pointer"}}>
+          <div className="d-flex flex-column mr-3 small-hover" style={{alignItems: "center"}}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#636363" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+              <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+            </svg>
             <small>Home</small>
           </div>
-          <div className="d-flex flex-column text-center mr-3">
-            <i className="bi bi-people-fill" style={{ fontSize: "24px" }}></i>
+
+          <div className="d-flex flex-column text-center mr-3" style={{cursor: "pointer"}}  style={{alignItems: "center"}}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#636363" class="bi bi-people-fill" viewBox="0 0 16 16">
+            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+            <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+            <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+          </svg>
             <small>Network</small>
           </div>
-          <div className="d-flex flex-column align-items-center mr-3">
-            <i class="bi bi-handbag-fill" style={{ fontSize: "24px" }}></i>
+
+
+          <div className="d-flex flex-column align-items-center mr-3" style={{cursor: "pointer"}}  style={{alignItems: "center"}}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#636363" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+              <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z"/>
+             <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z"/>
+            </svg>
             <small>Jobs</small>
           </div>
-          <div className="d-flex flex-column text-center mr-3">
-            <i
-              class="bi bi-chat-left-dots-fill"
-              style={{ fontSize: "24px" }}
-            ></i>
+
+          <div className="d-flex flex-column text-center mr-3" style={{cursor: "pointer"}}  style={{alignItems: "center"}}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#636363" class="bi bi-chat-left-dots-fill" viewBox="0 0 16 16">
+            <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793V2zm5 4a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+          </svg>
             <small>Messaging</small>
           </div>
+
           {/*   <div className="d-flex flex-column text-center mr-3">
             <i class="bi bi-bell-fill" style={{ fontSize: "24px" }}></i>
             <small>Notification</small>
@@ -117,7 +127,7 @@ const MyNavBar = () => {
             </Navbar.Collapse>
           </div> */}
 
-          <Dropdown className="text-center mr-3">
+          <Dropdown className="text-center mr-3" style={{cursor: "pointer"}}>
             <i class="bi bi-person-circle" style={{ fontSize: "24px" }}></i>
 
             <Dropdown.Toggle
@@ -135,7 +145,8 @@ const MyNavBar = () => {
             </Dropdown.Menu>
           </Dropdown>
         </div>
-        <div className="d-flex align-items-center">
+
+        <div className="d-flex align-items-center" style={{cursor: "pointer"}}>
           <Dropdown className="text-center ml-3 mr-4">
             <i class="bi bi-grid-3x3-gap-fill" style={{ fontSize: "24px" }}></i>
 
@@ -154,8 +165,7 @@ const MyNavBar = () => {
             </Dropdown.Menu>
           </Dropdown>
           <div className="d-flex flex-column text-center">
-            <small className="text-muted">Retry Premium</small>
-            <small className="text-muted">Free</small>
+            <small className="text-muted" style={{width: "100px"}}>Retry Premium Free</small>
           </div>
         </div>
       </Container>

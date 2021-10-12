@@ -43,6 +43,22 @@ body {
   max-width: 200px !important;
 }
 
+.nav-icons svg:hover {
+  fill: #3a3a3a;
+}
+
+.nav-icons small {
+  color: #B1B1B1;
+}
+
+.nav-icons small:hover {
+  color: #3a3a3a;
+}
+
+/* .small-hover :hover {
+  color: #3a3a3a;
+  fill: #3a3a3a;
+} */
 
 /*  PEOPLE YPU MAY KNOW  PEOPLE YPU MAY KNOW   PEOPLE YPU MAY KNOW  PEOPLE YPU MAY KNOW   PEOPLE YPU MAY KNOW   PEOPLE YPU MAY KNOW   PEOPLE YPU MAY KNOW */
 
