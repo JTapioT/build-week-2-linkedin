@@ -2,31 +2,28 @@ import { Form, Button, Dropdown } from "react-bootstrap";
 import { Container, Row, Col } from "react-bootstrap";
 import BootstrapSwitchButton from "bootstrap-switch-button-react";
 import {useState, useEffect} from 'react';
+import { useParams, useHistory } from "react-router-dom";
 
 const AddExperience = (props) => {
-  console.log(props);
-
-  const [isModalClosed, setModalClose] = useState(false);
+  
+  const {id} = useParams(props);
+  const history = useHistory(props);
 
   return (
     <>
-      <div
-        display= {isModalClosed && "none"}
-        className= "modal"
-        id="addExperienceModal"
-        data-backdrop="static"
-        data-keyboard="false"
-        tabindex="-1"
-      >
-        <Container className="mt-5 modal-body" style={{backgroundColor: "white"}}>
-          <h4>Add Experiance</h4>
-          <Row>
-            <Col md={8}>
+      <div className="modal" id="addExperienceModal" data-backdrop="static">
+        <Container
+          className="mt-5 modal-body"
+          style={{ backgroundColor: "white" }}
+        >
+          <h4 className="text-center">Add Experience</h4>
+          <Row className="justify-content-center">
+            <Col md={10}>
               <div style={{ height: "auto" }}>
                 <div className="add-Exp">
                   <Form>
                     <Row>
-                      <Col md={8}>
+                      <Col md={10}>
                         <div>
                           <h6>Notify Network</h6>
                           <small>
@@ -194,12 +191,12 @@ const AddExperience = (props) => {
                 Save
               </Button>{" "}
               <Button
+                data-dismiss="modal"
                 className="default-btn-style ml-auto"
                 variant="primary"
                 style={({ color: "white" }, { backgroundColor: "blue" })}
                 onClick={() => {
-                  props.history.push(`/profile/${props.match.params.id}`);
-                  setModalClose(true);
+                  history.push(`/profile/${id}`);
                 }}
               >
                 Close

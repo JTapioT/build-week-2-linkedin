@@ -24,22 +24,7 @@ const UserInfoJumbotron = () => {
           style={{ width: "auto", height: "200px", backgroundColor: "blue", borderTopLeftRadius: "18px", borderTopRightRadius: "18px" }}
           src={ImgLinkedin}
         />
-        {/*<Nav>
-          <Nav.Item>
-            <Nav.Link>
-              {" "}
-              <i
-                class="bi bi-pencil "
-                style={{
-                  marginTop: "10px",
-                  marginLeft: "720px",
-                  fontSize: "20px",
-                }}
-              ></i>
-              
-            </Nav.Link>
-          </Nav.Item>
-        </Nav>*/}
+
         <EditProfile />
         <Card.Body>
           <Card.Text>
