@@ -18,7 +18,7 @@ const AddExperience = (props) => {
         data-keyboard="false"
         tabindex="-1"
       >
-        <Container className="mt-5 modal-body">
+        <Container className="mt-5 modal-body" style={{backgroundColor: "white"}}>
           <h4>Add Experiance</h4>
           <Row>
             <Col md={8}>
