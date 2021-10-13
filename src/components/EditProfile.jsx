@@ -5,7 +5,7 @@ import { Component } from "react";
 class EditProfile extends Component {
   state = {
     show: false,
-    userId: this.props.id,
+    userId: this.props.id === "me" ? "6163efdfa890cc0015cf07de" : this.props.id,
     user: "",
   };
   handleClose = () => this.setState({ show: false });
@@ -21,7 +21,15 @@ class EditProfile extends Component {
         },
       }
     );
-    const userData = await response.json();
+    const userDatajson = await response.json();
+    const userData = {
+      name: userDatajson.name,
+      surname: userDatajson.surname,
+      email: userDatajson.email,
+      bio: userDatajson.bio,
+      title: userDatajson.title,
+      area: userDatajson.area,
+    };
     console.log(userData);
     this.state.user = userData;
   };
@@ -30,13 +38,15 @@ class EditProfile extends Component {
     console.log("i am updateData");
     try {
       const resp = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${this.state.userId}`,
+        `https://striveschool-api.herokuapp.com/api/profile/`,
         {
           method: "PUT",
-          headers: new Headers({
+          headers: {
+            "Content-Type": "application/json",
             Authorization:
               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZWZkZmE4OTBjYzAwMTVjZjA3ZGUiLCJpYXQiOjE2MzM5Mzk0MjMsImV4cCI6MTYzNTE0OTAyM30.HvEFLHymbCxV8ciPWBxaABNQ2NmFcOxsgJ8xi1Hkmuk",
-          }),
+          },
+          body: JSON.stringify(this.state.user),
         }
       );
       if (resp.ok) {
@@ -87,9 +97,12 @@ class EditProfile extends Component {
                 <Form.Control
                   type="text"
                   value={this.state.user.name}
-                  onChange={async () => {
-                    await this.updateData();
-                  }}
+                  onChange={(e) =>
+                    this.setState({
+                      ...this.state,
+                      user: { ...this.state.user, name: e.target.value },
+                    })
+                  }
                 ></Form.Control>
               </Col>
               <Col md>
@@ -97,9 +110,12 @@ class EditProfile extends Component {
                 <Form.Control
                   type="text"
                   value={this.state.user.surname}
-                  onChange={async () => {
-                    await this.updateData();
-                  }}
+                  onChange={(e) =>
+                    this.setState({
+                      ...this.state.user,
+                      surname: e.target.value,
+                    })
+                  }
                 />
               </Col>
             </Row>
@@ -108,9 +124,9 @@ class EditProfile extends Component {
             <Form.Control
               type="text"
               value={this.state.user.email}
-              onChange={async () => {
-                await this.updateData();
-              }}
+              onChange={(e) =>
+                this.setState({ ...this.state.user, email: e.target.value })
+              }
             ></Form.Control>
 
             <Row className="g-2">
@@ -119,9 +135,9 @@ class EditProfile extends Component {
                 <Form.Control
                   type="text"
                   value={this.state.user.bio}
-                  onChange={async () => {
-                    await this.updateData();
-                  }}
+                  onChange={(e) =>
+                    this.setState({ ...this.state.user, bio: e.target.value })
+                  }
                 ></Form.Control>
               </Col>
               <Col md>
@@ -129,9 +145,9 @@ class EditProfile extends Component {
                 <Form.Control
                   type="text"
                   value={this.state.user.title}
-                  onChange={async () => {
-                    await this.updateData();
-                  }}
+                  onChange={(e) =>
+                    this.setState({ ...this.state.user, title: e.target.value })
+                  }
                 />
               </Col>
             </Row>
@@ -139,9 +155,9 @@ class EditProfile extends Component {
             <Form.Control
               type="text"
               value={this.state.user.area}
-              onChange={async () => {
-                await this.updateData();
-              }}
+              onChange={(e) =>
+                this.setState({ ...this.state.user, area: e.target.value })
+              }
             ></Form.Control>
             <p>Let others know how to refer to you.</p>
 
@@ -149,9 +165,9 @@ class EditProfile extends Component {
             <Form.Control
               type="text"
               value={this.state.user.username}
-              onChange={async () => {
-                await this.updateData();
-              }}
+              onChange={(e) =>
+                this.setState({ ...this.state, user: e.target.value })
+              }
             ></Form.Control>
           </Modal.Body>
           <Modal.Footer>
@@ -165,7 +181,8 @@ class EditProfile extends Component {
             </Button>
             <Button
               variant="primary"
-              onClick={async () => {
+              onClick={() => {
+                this.updateData();
                 this.handleClose();
               }}
             >
