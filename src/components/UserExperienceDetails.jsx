@@ -38,9 +38,9 @@ function UserExperienceDetails({history,id,experience}) {
           <h5 className="m-0">{experience.role}</h5>
           <p className="m-0">{experience.company}</p>
           <p className="m-0">{experience.description}</p>
-          <small className="m-0">{`${experience.startDate.substr(0,4)} - ${
-            experience.endDate.substr(0,4) ? experience.endDate.substr(0,4) : ""
-          }`}</small>
+          <small className="m-0">
+            {`${experience.startDate && experience.startDate.substring(0,10)} - ${experience.endDate ? experience.endDate.substring(0,10) : ""}`}
+          </small>
         </div>
         <i
           className="bi bi-pencil align-self-start"

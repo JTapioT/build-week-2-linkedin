@@ -56,12 +56,6 @@ function AddExperience(props) {
       if (response.ok) {
         let responseJSON = await response.json();
         setExperience(responseJSON);
-        values.area = experience.area;
-        values.company = experience.company;
-        values.description = experience.description;
-        values.role = experience.role;
-        values.startDate = experience.startDate;
-        values.endDate = experience.endDate;
         setExperienceFetched(true);
         console.log(values);
         console.log(responseJSON);
@@ -71,7 +65,7 @@ function AddExperience(props) {
     }
   }
 
-  async function editData(body) {
+  async function editExperience(body) {
     try {
       let response = await fetch(
         `https://striveschool-api.herokuapp.com/api/profile/${id}/experiences/${experienceId}`,
@@ -127,22 +121,21 @@ function AddExperience(props) {
     handleChange,
     handleSubmit,
     errors,
-    touched,
     isValid,
-    isValidating,
-    status,
   } = useFormik({
     initialValues: {
-      role: "",
-      company: "",
-      description: "",
-      area: "",
-      startDate: "",
-      endDate: "",
+      role: experience.role,
+      company: experience.company,
+      description: experience.description,
+      area: experience.area,
+      startDate: experience.startDate,
+      endDate: experience.endDate,
     },
+    enableReinitialize: true,
     onSubmit: (values) => {
-      editData(values);
+      editExperience(values);
       alert(JSON.stringify(values));
+      history.push(`/profile/${id}`);
     },
     validationSchema: validationSchema,
   });
@@ -309,6 +302,7 @@ function AddExperience(props) {
                       </Button>{" "}
                       <div className="mt-3">
                         <Button
+                          data-dismiss="modal"
                           className="default-btn-style ml-auto mr-2"
                           variant="primary"
                           type="submit"
