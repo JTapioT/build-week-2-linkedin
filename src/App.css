@@ -24,7 +24,7 @@ body {
 .brdr-linkedin {
   border: 2px solid #E9E8E5;
   background-color: white;
-  height: 300px;
+  height: fit-content;
   border-radius: 18px;
   padding: 24px 16px;
 }
@@ -140,7 +140,7 @@ body {
 
 
 
-/* Create Post */
+/* Create Post  Create Post  Create Post  Create Post  Create Post  Create Post  Create Post  Create Post  Create Post */
 .brdr-25 {
   border-radius: 25px;
 }
@@ -180,4 +180,79 @@ body {
   background-color: rgba(212, 212, 212, 0.5);
   border-radius: 5px;
   cursor: pointer;
+}
+
+/* Create Post Modal  Create Post Modal  Create Post Modal  Create Post Modal  Create Post Modal  Create Post Modal  Create Post Modal */
+.create-post-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+}
+
+.create-post-modal-main {
+  position:fixed;
+  background: white;
+  width: 80%;
+  height: auto;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  border-radius: 25px;
+  padding: 16px 24px;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+.row-of-icons svg {
+  fill: #3a3a3a;
+}
+
+.row-of-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.row-of-icons .icon-text-flex {
+  /* not roperly orund but ok */
+  border-radius: 28px;
+}
+
+.text-area-post-modal .btn-outline-primary {
+  border-color: transparent !important;
+  font-weight: 600 !important;
+  color: #0468BF;
+}
+
+.text-area-post-modal .btn-outline-primary:hover {
+  /* also, official colour */
+  background-color: #E3F0FE;
+}
+
+
+/* ALL POSTS */
+.brdr-linkedin-posts {
+  border: 2px solid #E9E8E5;
+  background-color: white;
+  height: fit-content;
+  border-radius: 18px;
+  margin-bottom: 20px;
+}
+
+.brdr-linkedin-posts img .special-img{
+  border-radius:0 0 18px 18px ;
+}
+
+.posts-info-top {
+  padding: 16px 24px;
 }

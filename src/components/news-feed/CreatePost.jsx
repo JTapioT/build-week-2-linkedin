@@ -1,12 +1,29 @@
+import React from 'react'
+import {Component} from "react";
 import Button from 'react-bootstrap/Button'
+import CreatePostModal from './CreatePostModal'
 
-const CreatePost = () => {
-  return (
-    <>
+class CreatePost extends Component {
+
+  state = {
+    show: false
+  }
+
+  showModal = () => {
+    this.setState({ show: true });
+  }
+
+  hideModal = () => {
+    this.setState({ show: false });
+  }
+
+  render() {
+    return(
+      <>
       <div className="brdr-linkedin " style={{width: "540px", height: "120px"}}>
         <div className="create-post-flex">
           <div className="user-img-resize"></div>
-          <Button variant="outline-secondary" className="brdr-25 text-left">Start a Post</Button>
+          <Button variant="outline-secondary" className="brdr-25 text-left" onClick={this.showModal}>Start a Post</Button>
         </div>
         <div className="create-post-flex">
           <div className="icon-text-flex">
@@ -40,8 +57,13 @@ const CreatePost = () => {
           </div>
         </div>
       </div>
+
+      <CreatePostModal show={this.state.show} handleClose={this.hideModal}>
+        {/* Can pu the form here for simplicity,but not yet */}
+      </CreatePostModal>
     </>
-  )
+    )
+  }
 }
 
 export default CreatePost

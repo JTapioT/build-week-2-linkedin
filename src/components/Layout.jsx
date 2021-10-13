@@ -7,6 +7,7 @@ import UserInfoJumbotron from "./UserInfoJumbotron";
 import PeopleYouMayKnow from "./PeopleYouMayKnow";
 
 import CreatePost from "./news-feed/CreatePost";
+import AllPosts from './news-feed/AllPosts'
 
 
 function Layout(props) {
@@ -23,7 +24,10 @@ function Layout(props) {
                 <Education />
                 <SkillsEndorsements />
                 <About />{" "}
+
                 <CreatePost />
+                <hr></hr>
+                <AllPosts />
               </Col>
             </Row>
           </Col>
