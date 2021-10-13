@@ -91,6 +91,7 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  background-color: rgb(96, 96, 122);
 }
 
 
@@ -134,4 +135,49 @@ body {
 
 .artdeco-toggle:after, .artdeco-toggle:before {
   top: unset!important;
+}
+
+
+
+
+/* Create Post */
+.brdr-25 {
+  border-radius: 25px;
+}
+
+.create-post-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.create-post-flex Button {
+  width: 90%;
+  color: #656565;
+  height: 40px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.btn-outline-secondary:hover {
+  background-color: rgba(212, 212, 212, 0.3)!important;
+  border-radius: 25px!important;
+  cursor: pointer!important;
+  color: #656565;
+}
+
+.icon-text-flex span {
+  font-weight: 600;
+  color: #656565;
+  margin-left: 10px;
+}
+
+.icon-text-flex {
+  padding: 8px 10px;
+}
+
+.icon-text-flex:hover {
+  background-color: rgba(212, 212, 212, 0.5);
+  border-radius: 5px;
+  cursor: pointer;
 }
