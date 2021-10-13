@@ -6,7 +6,7 @@ import About from "./About";
 import UserInfoJumbotron from "./UserInfoJumbotron";
 import PeopleYouMayKnow from "./PeopleYouMayKnow";
 
-import FeedLayout from './news-feed/FeedLayout'
+import CreatePost from "./news-feed/CreatePost";
 
 
 function Layout(props) {
@@ -23,7 +23,7 @@ function Layout(props) {
                 <Education />
                 <SkillsEndorsements />
                 <About />{" "}
-                <FeedLayout />
+                <CreatePost />
               </Col>
             </Row>
           </Col>
