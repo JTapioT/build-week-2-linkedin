@@ -17,7 +17,6 @@ function App() {
               <Layout {...props} />
               {/* <Route path="/AddExperiance" exact component={AddExperience} />  */}
               <AddExperience />
-              <EditExperience />
               <Footer />
             </>
           )}
