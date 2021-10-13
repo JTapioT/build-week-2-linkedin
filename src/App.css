@@ -256,3 +256,15 @@ body {
 .posts-info-top {
   padding: 16px 24px;
 }
+
+.text-posts img {
+  margin-bottom: 15px;
+}
+
+.text-posts img {
+  margin-right: 10px;
+}
+
+.text-posts {
+  display: flex;
+}
