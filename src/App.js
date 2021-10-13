@@ -1,22 +1,33 @@
-import MyNavBar from "./components/MyNavBar"
-import Layout from "./components/Layout"
-import Footer from "./components/Footer"
+import MyNavBar from "./components/MyNavBar";
+import Layout from "./components/Layout";
+import Footer from "./components/Footer";
 import { BrowserRouter, Route, useParams } from "react-router-dom";
- import AddExperience from "./components/AddExperience";
- import EditExperience from "./components/EditExperience";
+import AddExperience from "./components/AddExperience";
+import EditExperience from "./components/EditExperience";
+import NewsFeedProfile from "./components/NewsFeedProfile";
+import AddToYourFeed from "./components/AddToYourFeed";
+import FeedLayout from "./components/FeedLayout";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Route
+          path="/feed"
+          render={(props) => (
+            <>
+              <MyNavBar />
+              <FeedLayout {...props} />
+            </>
+          )}
+        />
+        <Route
           path="/profile/:id"
           render={(props) => (
             <>
               <MyNavBar />
               <Layout {...props} />
-              {/* <Route path="/AddExperiance" exact component={AddExperience} />  */}
-              <AddExperience />
+
               <Footer />
             </>
           )}
@@ -26,12 +37,12 @@ function App() {
           render={(props) => <AddExperience {...props} />}
         />
         <Route
-        path="/profile/:id/edit/forms/position/:experienceId"
-        render={(props) => <EditExperience {...props}/>}
+          path="/profile/:id/edit/forms/position/:experienceId"
+          render={(props) => <EditExperience {...props} />}
         />
       </BrowserRouter>
     </>
   );
-} 
+}
 
-export default App
+export default App;
