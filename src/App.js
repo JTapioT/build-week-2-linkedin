@@ -25,6 +25,10 @@ function App() {
           path="/profile/:id/edit/forms/position/new"
           render={(props) => <AddExperience {...props} />}
         />
+        <Route
+        path="/profile/:id/edit/forms/position/:experienceId"
+        render={(props) => <EditExperience {...props}/>}
+        />
       </BrowserRouter>
     </>
   );

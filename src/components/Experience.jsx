@@ -18,9 +18,10 @@ function Experience(props) {
     };
     
     async function fetchUser() {
+      console.log(userId);
       try {
         let response = await fetch(
-          `https://striveschool-api.herokuapp.com/api/profile/${userId === "me" ? "me" : userId}/experiences`,
+          `https://striveschool-api.herokuapp.com/api/profile/${userId === "me" ? "6163efdfa890cc0015cf07de" : userId}/experiences`,
           {
             headers: {
               authorization:
@@ -61,7 +62,7 @@ function Experience(props) {
       <div className="d-flex justify-content-between align-items-center">
         <h5>Experience</h5>
         <i
-          class="bi bi-plus-lg"
+          className="bi bi-plus-lg"
           data-toggle= {isExperienceAddClicked ? "modal" : null}
           data-target={isExperienceAddClicked ? "#addExperienceModal" : null}
           style={experienceIconStyle}
