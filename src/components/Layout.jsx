@@ -6,7 +6,6 @@ import About from "./About";
 import UserInfoJumbotron from "./UserInfoJumbotron";
 import PeopleYouMayKnow from "./PeopleYouMayKnow";
 
-
 function Layout(props) {
   return (
     <>
@@ -16,8 +15,11 @@ function Layout(props) {
             <Row>
               <Col className="w-100">
                 {/* INSERT HERE THE COMPONENTS */}
-                <UserInfoJumbotron />
-                <Experience id={props.match.params.id} history={props.history}/>
+                <UserInfoJumbotron id={props.match.params.id} />
+                <Experience
+                  id={props.match.params.id}
+                  history={props.history}
+                />
                 <Education />
                 <SkillsEndorsements />
                 <About />{" "}
