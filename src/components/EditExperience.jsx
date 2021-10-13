@@ -38,7 +38,7 @@ function AddExperience(props) {
   const { id } = useParams(props);
   const { experienceId } = useParams(props);
   const history = useHistory(props);
-  const [experience, setExperience] =  useState({});
+  const [experience, setExperience] = useState({});
   const [isExperienceFetched, setExperienceFetched] = useState(false);
 
   async function fetchExperience() {
@@ -113,16 +113,9 @@ function AddExperience(props) {
 
   useEffect(() => {
     fetchExperience();
-  }, [])
+  }, []);
 
-
-  const {
-    values,
-    handleChange,
-    handleSubmit,
-    errors,
-    isValid,
-  } = useFormik({
+  const { values, handleChange, handleSubmit, errors, isValid } = useFormik({
     initialValues: {
       role: experience.role,
       company: experience.company,
@@ -136,6 +129,7 @@ function AddExperience(props) {
       editExperience(values);
       alert(JSON.stringify(values));
       history.push(`/profile/${id}`);
+      history.go();
     },
     validationSchema: validationSchema,
   });

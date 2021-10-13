@@ -1,17 +1,17 @@
-import {useState} from 'react';
+import { useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 
-function UserExperienceDetails({history,id,experience}) {
-
+function UserExperienceDetails({ history, id, experience }) {
   const [penHover, setPenHover] = useState(false);
   const [isExperienceEditClicked, setExperienceEditClicked] = useState(false);
 
   const penStyle = {
-    fontSize: "20px",
+    fontSize: "1.2em",
     backgroundColor: penHover ? "lightgrey" : null,
     borderRadius: "50%",
-    padding: "0.1em",
+    padding: "0.4em 0.6em",
     cursor: penHover ? "pointer" : null,
+    transition: "linear 0.3s",
   };
 
   return (
@@ -38,9 +38,13 @@ function UserExperienceDetails({history,id,experience}) {
           <h5 className="m-0">{experience.role}</h5>
           <p className="m-0">{experience.company}</p>
           <p className="m-0">{experience.description}</p>
-          <small className="m-0">
-            {`${experience.startDate && experience.startDate.substring(0,10)} - ${experience.endDate ? experience.endDate.substring(0,10) : ""}`}
-          </small>
+          <p className="m-0" style={{ fontSize: "0.9em" }}>
+            {`${
+              experience.startDate && experience.startDate.substring(0, 10)
+            } - ${
+              experience.endDate ? experience.endDate.substring(0, 10) : ""
+            }`}
+          </p>
         </div>
         <i
           className="bi bi-pencil align-self-start"

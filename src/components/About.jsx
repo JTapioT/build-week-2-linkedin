@@ -2,7 +2,7 @@
 
 const About = () => {
   return (
-    <div className="brdr-linkedin" style={{height:"auto"}}>
+    <div className="brdr-linkedin mt-3" style={{height:"auto"}}>
        <h5>About</h5>
        <div className="overflow-height">
 

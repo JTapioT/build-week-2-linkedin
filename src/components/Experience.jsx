@@ -1,50 +1,50 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import UserExperienceDetails from "./UserExperienceDetails";
 
 function Experience(props) {
-
   /*  const [user, setUser] = useState({}); */
-    const [userId, setUserId] = useState(props.id);
-    const [userExperience, setUserExperience] = useState([]);
-    const [isExperienceIconHover, setExperienceIconHover] = useState(false);
-    const[isExperienceAddClicked, setExperienceClicked] = useState(false);
+  const [userId, setUserId] = useState(props.id);
+  const [userExperience, setUserExperience] = useState([]);
+  const [isExperienceIconHover, setExperienceIconHover] = useState(false);
+  const [isExperienceAddClicked, setExperienceClicked] = useState(false);
 
-    const experienceIconStyle = {
-      fontSize: "1.4em",
-      backgroundColor: isExperienceIconHover ? "lightgrey" : null,
-      borderRadius: "50%",
-      padding: "0.1em",
-      cursor: isExperienceIconHover ? "pointer" : null,
-    };
-    
-    async function fetchUser() {
-      console.log(userId);
-      try {
-        let response = await fetch(
-          `https://striveschool-api.herokuapp.com/api/profile/${userId === "me" ? "6163efdfa890cc0015cf07de" : userId}/experiences`,
-          {
-            headers: {
-              authorization:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZWZkZmE4OTBjYzAwMTVjZjA3ZGUiLCJpYXQiOjE2MzM5Mzk0MjMsImV4cCI6MTYzNTE0OTAyM30.HvEFLHymbCxV8ciPWBxaABNQ2NmFcOxsgJ8xi1Hkmuk",
-            },
-          }
-        );
+  const experienceIconStyle = {
+    fontSize: "1.2em",
+    backgroundColor: isExperienceIconHover ? "lightgrey" : null,
+    borderRadius: "50%",
+    padding: "0.4em 0.6em",
+    cursor: isExperienceIconHover ? "pointer" : null,
+    transition: "linear 0.3s",
+  };
 
-        if(response.ok) {
-          let responseJSON = await response.json();
-          console.log(responseJSON);
-          setUserExperience(responseJSON);
+  async function fetchUser() {
+    console.log(userId);
+    try {
+      let response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/${
+          userId === "me" ? "6163efdfa890cc0015cf07de" : userId
+        }/experiences`,
+        {
+          headers: {
+            authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZWZkZmE4OTBjYzAwMTVjZjA3ZGUiLCJpYXQiOjE2MzM5Mzk0MjMsImV4cCI6MTYzNTE0OTAyM30.HvEFLHymbCxV8ciPWBxaABNQ2NmFcOxsgJ8xi1Hkmuk",
+          },
         }
-      } catch(error) {
-        console.log(error);
+      );
+
+      if (response.ok) {
+        let responseJSON = await response.json();
+        console.log(responseJSON);
+        setUserExperience(responseJSON);
       }
+    } catch (error) {
+      console.log(error);
     }
+  }
 
-    useEffect(() => {
-      fetchUser();
-    },[])
-
-
+  useEffect(() => {
+    fetchUser();
+  }, []);
 
   return (
     <div
@@ -63,7 +63,7 @@ function Experience(props) {
         <h5>Experience</h5>
         <i
           className="bi bi-plus-lg"
-          data-toggle= {isExperienceAddClicked ? "modal" : null}
+          data-toggle={isExperienceAddClicked ? "modal" : null}
           data-target={isExperienceAddClicked ? "#addExperienceModal" : null}
           style={experienceIconStyle}
           onMouseEnter={() => {

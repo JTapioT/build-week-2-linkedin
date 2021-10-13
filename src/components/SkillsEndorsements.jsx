@@ -9,8 +9,9 @@ function SkillsEndorsements() {
     border: "1px solid lightgrey",
     borderBottomLeftRadius: "18px",
     borderBottomRightRadius: "18px",
-    backgroundColor: onHover ? "grey" : "white",
+    backgroundColor: onHover ? "#ccc" : "white",
     cursor: "pointer",
+    transition: "0.2s linear",
   };
 
 
@@ -133,13 +134,13 @@ function SkillsEndorsements() {
           setHoverStyle(onHover ? false : true);
         }}
       >
-        <h5 className="m-0" style={{ color: onHover ? "white" : "grey" }}>
+        <h5 className="m-0 mr-1" style={{ color: onHover ? "white" : "grey" }}>
           {showMore ? "Show Less" : "Show More"}
         </h5>
         {showMore ? (
-          <i class="bi bi-caret-up" style={{ color: onHover ? "white" : "grey" }}></i>
+          <i class="bi bi-chevron-up" style={{ color: onHover ? "white" : "grey" }}></i>
         ) : (
-          <i class="bi bi-caret-down" style={{ color: onHover ? "white" : "grey" }}></i>
+          <i class="bi bi-chevron-down" style={{ color: onHover ? "white" : "grey" }}></i>
         )}
       </div>
     </div>

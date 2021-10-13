@@ -15,10 +15,7 @@ import { formatDate, parseDate } from "react-day-picker/moment";
 import { useFormik } from "formik";
 import * as yup from "yup";
 
-
-
 function AddExperience(props) {
-
   const validationSchema = yup.object().shape({
     role: yup
       .string()
@@ -70,10 +67,7 @@ function AddExperience(props) {
     handleChange,
     handleSubmit,
     errors,
-    touched,
     isValid,
-    isValidating,
-    status,
   } = useFormik({
     initialValues: {
       role: "",
@@ -89,7 +83,6 @@ function AddExperience(props) {
     },
     validationSchema: validationSchema,
   });
-
 
   return (
     <>
@@ -191,7 +184,6 @@ function AddExperience(props) {
                         }}
                         placeholder={`${formatDate(new Date())}`}
                       />
-
                     </div>
                     <div
                       className="d-flex justify-content-between"
@@ -207,7 +199,8 @@ function AddExperience(props) {
                         ) => {
                           const input = dayPickerInput.getInput();
                           /* THIS HAS TO BE BAD PRACTICE BUT IT WORKS FOR NOW */
-                          values.endDate = input.value === "" ? null : input.value;
+                          values.endDate =
+                            input.value === "" ? null : input.value;
                         }}
                         placeholder={`${formatDate(new Date())}`}
                       />
@@ -267,6 +260,7 @@ function AddExperience(props) {
                         }
                         onClick={() => {
                           history.push(`/profile/${id}`);
+                          history.go();
                         }}
                       >
                         Close
