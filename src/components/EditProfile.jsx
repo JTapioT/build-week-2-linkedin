@@ -112,8 +112,8 @@ class EditProfile extends Component {
                   value={this.state.user.surname}
                   onChange={(e) =>
                     this.setState({
-                      ...this.state.user,
-                      surname: e.target.value,
+                      ...this.state,
+                      user: { ...this.state.user, surname: e.target.value },
                     })
                   }
                 />
@@ -125,7 +125,10 @@ class EditProfile extends Component {
               type="text"
               value={this.state.user.email}
               onChange={(e) =>
-                this.setState({ ...this.state.user, email: e.target.value })
+                this.setState({
+                  ...this.state,
+                  user: { ...this.state.user, email: e.target.value },
+                })
               }
             ></Form.Control>
 
@@ -136,7 +139,10 @@ class EditProfile extends Component {
                   type="text"
                   value={this.state.user.bio}
                   onChange={(e) =>
-                    this.setState({ ...this.state.user, bio: e.target.value })
+                    this.setState({
+                      ...this.state,
+                      user: { ...this.state.user, bio: e.target.value },
+                    })
                   }
                 ></Form.Control>
               </Col>
@@ -146,7 +152,10 @@ class EditProfile extends Component {
                   type="text"
                   value={this.state.user.title}
                   onChange={(e) =>
-                    this.setState({ ...this.state.user, title: e.target.value })
+                    this.setState({
+                      ...this.state,
+                      user: { ...this.state.user, title: e.target.value },
+                    })
                   }
                 />
               </Col>
@@ -156,7 +165,10 @@ class EditProfile extends Component {
               type="text"
               value={this.state.user.area}
               onChange={(e) =>
-                this.setState({ ...this.state.user, area: e.target.value })
+                this.setState({
+                  ...this.state,
+                  user: { ...this.state.user, area: e.target.value },
+                })
               }
             ></Form.Control>
             <p>Let others know how to refer to you.</p>
@@ -166,7 +178,10 @@ class EditProfile extends Component {
               type="text"
               value={this.state.user.username}
               onChange={(e) =>
-                this.setState({ ...this.state, user: e.target.value })
+                this.setState({
+                  ...this.state,
+                  user: { ...this.state.user, username: e.target.value },
+                })
               }
             ></Form.Control>
           </Modal.Body>
