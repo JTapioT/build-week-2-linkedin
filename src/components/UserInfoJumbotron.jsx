@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Row, Col, Nav, Button } from "react-bootstrap";
-import ImgLinkedin from "../assets/images.jpg";
+
 import EditProfile from "./EditProfile";
 import { useState, useEffect } from "react";
 
