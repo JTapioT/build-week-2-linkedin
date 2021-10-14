@@ -13,7 +13,7 @@ function App() {
     <>
       <BrowserRouter>
         <Route
-          path="/profile/:id"
+          path="/feed"
           render={(props) => (
             <>
               <MyNavBar />
