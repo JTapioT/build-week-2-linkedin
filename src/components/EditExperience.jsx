@@ -9,6 +9,7 @@ import {
 import BootstrapSwitchButton from "bootstrap-switch-button-react";
 import { useParams, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { FormFile, Label } from "react-bootstrap";
 import DayPickerInput from "react-day-picker/DayPickerInput";
 import "react-day-picker/lib/style.css";
 import { formatDate, parseDate } from "react-day-picker/moment";
@@ -40,6 +41,38 @@ function AddExperience(props) {
   const history = useHistory(props);
   const [experience, setExperience] = useState({});
   const [isExperienceFetched, setExperienceFetched] = useState(false);
+  const [isAddMediaClicked, setAddMediaClicked] = useState(false);
+  const [fileName, setFileName] = useState("Upload experience image");
+  const [isFileUploaded, setFileUploaded] = useState(false);
+
+  useEffect(() => {
+    console.log(fileName);
+  }, [fileName]);
+
+  let formData = new FormData();
+
+  async function uploadImage(formData) {
+
+    try {
+      let response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/6163efdfa890cc0015cf07de/experiences/${experienceId}/picture`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZWZkZmE4OTBjYzAwMTVjZjA3ZGUiLCJpYXQiOjE2MzM5Mzk0MjMsImV4cCI6MTYzNTE0OTAyM30.HvEFLHymbCxV8ciPWBxaABNQ2NmFcOxsgJ8xi1Hkmuk",
+          },
+          body: formData,
+        }
+      );
+
+      if (response.ok) {
+        let responseJSON = await response.json();
+        console.log(responseJSON);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   async function fetchExperience() {
     try {
@@ -57,8 +90,6 @@ function AddExperience(props) {
         let responseJSON = await response.json();
         setExperience(responseJSON);
         setExperienceFetched(true);
-        console.log(values);
-        console.log(responseJSON);
       }
     } catch (error) {
       console.log(error);
@@ -66,6 +97,7 @@ function AddExperience(props) {
   }
 
   async function editExperience(body) {
+
     try {
       let response = await fetch(
         `https://striveschool-api.herokuapp.com/api/profile/${id}/experiences/${experienceId}`,
@@ -79,6 +111,10 @@ function AddExperience(props) {
           body: JSON.stringify(body),
         }
       );
+
+      if (isFileUploaded) {
+        uploadImage(body.formData);
+      }
 
       if (response.ok) {
         let responseJSON = await response.json();
@@ -123,13 +159,14 @@ function AddExperience(props) {
       area: experience.area,
       startDate: experience.startDate,
       endDate: experience.endDate,
+      formData: formData,
     },
     enableReinitialize: true,
     onSubmit: (values) => {
       editExperience(values);
-      alert(JSON.stringify(values));
+      /* alert(JSON.stringify(values));
       history.push(`/profile/${id}`);
-      history.go();
+      history.go(); */
     },
     validationSchema: validationSchema,
   });
@@ -290,13 +327,41 @@ function AddExperience(props) {
                       <Button
                         className="default-btn-style ml-2"
                         variant="outline-primary"
+                        onClick={() => {
+                          setAddMediaClicked(true);
+                        }}
                       >
                         {" "}
                         + Add Media
                       </Button>{" "}
-                      <div className="mt-3">
+                      <Form.Group>
+                        {/*  <FormFile.Label>Upload an image</FormFile.Label>
+                        <FormControl
+                          type="file"
+                          id="experienceImageUpload"
+                          accept=".png"
+                          label={fileName}
+                          onChange={(e) => console.log(e.target.files[0])}
+                        /> */}
+                        <FormFile
+                          type="file"
+                          id="experienceImageUpload"
+                          label={fileName}
+                          onChange={(e) => {
+                            setFileName(e.target.files[0].name);
+                            setFileUploaded(true)
+                            console.log("HEREERRR")
+                            console.dir(e.target.files[0]);
+                            formData.append('experience', e.target.files[0]);
+                            values.formData = formData;
+                           /*  console.log(formData.getAll("experience")); */
+                          }}
+                          custom
+                          style={{ width: "30vw" }}
+                        ></FormFile>
+                      </Form.Group>
+                      <div className="mt-5">
                         <Button
-                          data-dismiss="modal"
                           className="default-btn-style ml-auto mr-2"
                           variant="primary"
                           type="submit"
@@ -306,7 +371,7 @@ function AddExperience(props) {
                           }
                         >
                           Save
-                        </Button>{" "}
+                        </Button>
                         <Button
                           data-dismiss="modal"
                           className="default-btn-style ml-auto mr-2"
@@ -321,7 +386,7 @@ function AddExperience(props) {
                           }}
                         >
                           Delete
-                        </Button>{" "}
+                        </Button>
                         <Button
                           data-dismiss="modal"
                           className="default-btn-style ml-auto"
@@ -335,7 +400,7 @@ function AddExperience(props) {
                           }}
                         >
                           Close
-                        </Button>{" "}
+                        </Button>
                       </div>
                     </Form>
                   </div>
