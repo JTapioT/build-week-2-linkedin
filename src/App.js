@@ -12,13 +12,15 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Route path="/profile/:id"
+        <Route
+          path="/profile/:id"
           render={(props) => (
             <>
               <MyNavBar />
               <FeedLayout {...props} />
             </>
-          )}/>
+          )}
+        />
         <Route
           path="/profile/:id"
           render={(props) => (
@@ -27,8 +29,8 @@ function App() {
               <Layout {...props} />
               {/* <Route path="/AddExperiance" exact component={AddExperience} />  */}
               <AddExperience />
-              <NewsFeedProfile/>
-              <AddToYourFeed/>
+              <NewsFeedProfile />
+              <AddToYourFeed />
               <Footer />
             </>
           )}
@@ -36,6 +38,10 @@ function App() {
         <Route
           path="/profile/:id/edit/forms/position/new"
           render={(props) => <AddExperience {...props} />}
+        />
+        <Route
+          path="/profile/:id/edit/forms/position/:experienceId"
+          render={(props) => <EditExperience {...props} />}
         />
       </BrowserRouter>
     </>
