@@ -3,8 +3,10 @@ import Layout from "./components/Layout"
 import Footer from "./components/Footer"
 import { BrowserRouter, Route, useParams } from "react-router-dom";
 import AddExperience from "./components/AddExperience";
+import EditExperience from "./components/EditExperience";
+import NewsFeedProfile from "./components/NewsFeedProfile";
+import AddToYourFeed from "./components/AddToYourFeed";
 import FeedLayout from "./components/FeedLayout";
-
 
 function App() {
   return (
@@ -23,6 +25,10 @@ function App() {
             <>
               <MyNavBar />
               <Layout {...props} />
+              {/* <Route path="/AddExperiance" exact component={AddExperience} />  */}
+              <AddExperience />
+              <NewsFeedProfile/>
+              <AddToYourFeed/>
               <Footer />
             </>
           )}
