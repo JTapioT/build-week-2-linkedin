@@ -335,14 +335,6 @@ function AddExperience(props) {
                         + Add Media
                       </Button>{" "}
                       <Form.Group>
-                        {/*  <FormFile.Label>Upload an image</FormFile.Label>
-                        <FormControl
-                          type="file"
-                          id="experienceImageUpload"
-                          accept=".png"
-                          label={fileName}
-                          onChange={(e) => console.log(e.target.files[0])}
-                        /> */}
                         <FormFile
                           type="file"
                           id="experienceImageUpload"

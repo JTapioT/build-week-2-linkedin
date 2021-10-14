@@ -27,10 +27,6 @@ function Layout(props) {
                 <Education />
                 <SkillsEndorsements />
                 <About />{" "}
-
-                <CreatePost />
-                <hr></hr>
-                <AllPosts />
               </Col>
             </Row>
           </Col>
