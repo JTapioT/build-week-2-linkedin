@@ -81,6 +81,10 @@ const PostModal = ({ handleClose, show, children }) => {
               <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
             </svg>
           </div>
+        
+        <Button variant="primary" className="btn-primary rounded-pill" style={{width:"70px"}}>
+          Post
+        </Button>
         </div>
 
       </section>
