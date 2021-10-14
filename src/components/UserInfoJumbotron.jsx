@@ -63,17 +63,19 @@ const UserInfoJumbotron = (props) => {
               <Row>
                 <Col md={8}>
                   <b>
-                    <h3>
+                    <h3 style={{fontWeight: "600"}} className="mb-0">
                       {user.name} {user.surname}
                     </h3>
                   </b>
-                  <h5>{user.bio}</h5>
-                  <h6>{user.title}</h6>
+                  <h5 style={{fontSize:"medium"}} className="mb-1">{user.title}</h5>
+                  <h5 style={{fontSize:"medium", color: "grey"}} className="mb-0">{user.bio}</h5>
 
                   <Nav>
                     <Nav.Item>
-                      <Nav.Link>Contact Info</Nav.Link>
-                      <p>{user.email}</p>
+                      <Nav.Link style={{ fontSize: "14px"}} className="d-inline text-secondary pl-0 pr-0">
+                        Contact Info - 
+                      </Nav.Link>
+                      <p className="d-inline text-secondary" style={{fontSize: "14px"}}>{user.email}</p>
                     </Nav.Item>
                   </Nav>
                 </Col>
@@ -90,14 +92,14 @@ const UserInfoJumbotron = (props) => {
               <Row>
                 <Nav>
                   <Nav.Item>
-                    <Nav.Link style={{ marginLeft: "7px" }}>
+                    <Nav.Link>
                       22 Connections
                     </Nav.Link>
                   </Nav.Item>
                 </Nav>
               </Row>
 
-              <Row>
+              <Row style={{marginLeft:"-25px"}}>
                 <Button
                   className="btn-primary"
                   style={{ borderRadius: "20px", marginLeft: "20px" }}
