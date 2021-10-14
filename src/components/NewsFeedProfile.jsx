@@ -1,6 +1,8 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { ListGroup, ListGroupItem } from "react-bootstrap";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
 const NewsFeedProfile = () => {
   const [myProfile, SetMyProfile] = useState([]);
 
@@ -35,7 +37,9 @@ const NewsFeedProfile = () => {
               <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
               <Card.Body>
                 <Card.Title>
-                <Card.Link href="#">Welcome !</Card.Link> <br /> <small>Add a photo</small>
+                    <Link to="/profile/me">
+                <Card.Link >Welcome !</Card.Link> <br /> <small>Add a photo</small>
+                </Link>
                 </Card.Title>
                 <Card.Text>
                   connection <br /> Grow your network
