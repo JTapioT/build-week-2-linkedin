@@ -21,7 +21,7 @@ class AllPosts extends React.Component {
       // receive only the first 10
       if(response.ok) {
         const posts = responseJson.map((eachPost, index) => {
-          if(index < 3) {
+          if(index < 10) {
             return eachPost
           }
         }).filter(Boolean)
