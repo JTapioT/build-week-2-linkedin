@@ -8,6 +8,7 @@ class EditProfile extends Component {
     userId: this.props.id === "me" ? "6163efdfa890cc0015cf07de" : this.props.id,
     user: "",
   };
+
   handleClose = () => this.setState({ show: false });
   handleShow = () => this.setState({ show: true });
 
@@ -26,6 +27,7 @@ class EditProfile extends Component {
       name: userDatajson.name,
       surname: userDatajson.surname,
       email: userDatajson.email,
+      image: userDatajson.image,
       bio: userDatajson.bio,
       title: userDatajson.title,
       area: userDatajson.area,
@@ -128,6 +130,17 @@ class EditProfile extends Component {
                 this.setState({
                   ...this.state,
                   user: { ...this.state.user, email: e.target.value },
+                })
+              }
+            ></Form.Control>
+            <Form.Label>Image</Form.Label>
+            <Form.Control
+              type="file"
+              value={this.state.user.image}
+              onChange={(e) =>
+                this.setState({
+                  ...this.state,
+                  user: { ...this.state.user, image: e.target.value },
                 })
               }
             ></Form.Control>
