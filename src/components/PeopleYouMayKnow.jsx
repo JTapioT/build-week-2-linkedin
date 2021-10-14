@@ -42,7 +42,7 @@ const PeopleYouMayKnow = () => {
 
 
     return(
-      <div className= "brdr-linkedin brdr-linked-people-you-may-know" style={{width:"320px", height:"auto"}}>
+      <div className= "brdr-linkedin brdr-linked-people-you-may-know" style={{height:"auto"}}>
         <h5>People You May Know</h5>
 
         {/* {
