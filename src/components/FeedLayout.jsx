@@ -1,4 +1,8 @@
 import { Container, Row, Col } from "react-bootstrap";
+import AddToYourFeed from "./AddToYourFeed";
+import AllPosts from "./news-feed/AllPosts";
+import CreatePost from "./news-feed/CreatePost";
+import NewsFeedProfile from "./NewsFeedProfile";
 
 function FeedLayout(props) {
   return (
@@ -9,7 +13,8 @@ function FeedLayout(props) {
             <Row>
               <Col className="w-100">
                 {/* INSERT HERE THE COMPONENTS */}
-                <div style={{ backgroundColor: "green", height: "300px" }}>Hello from left side</div>
+                
+                <NewsFeedProfile />
               </Col>
             </Row>
           </Col>
@@ -17,7 +22,9 @@ function FeedLayout(props) {
             <Row>
               <Col className="w-100">
                 {/* INSERT HERE THE COMPONENTS */}
-                <div className="w-100" style={{ backgroundColor: "orange", height: "300px"}}>Hello from center</div>
+                
+                <CreatePost/>
+                <AllPosts/>
               </Col>
             </Row>
           </Col>
@@ -25,7 +32,7 @@ function FeedLayout(props) {
             <Row>
               <Col className="w-100">
                 {/* INSERT HERE THE COMPONENTS */}
-                <div className="w-100" style={{ backgroundColor: "blue", height: "400px" }}>Hello from right</div>
+                <AddToYourFeed/>
               </Col>
             </Row>
           </Col>

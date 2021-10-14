@@ -45,7 +45,7 @@ const AddToYourFeed = () => {
 
   return (
     <>
-      <Container>
+      <div style={{width: "100%"}}>
         <Row>
           <Col md={3}>
             <div
@@ -229,7 +229,7 @@ const AddToYourFeed = () => {
         <Row>
           <Col md={3}></Col>
         </Row>
-      </Container>
+        </div>
     </>
   );
 };

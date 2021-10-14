@@ -28,10 +28,10 @@ const NewsFeedProfile = () => {
 
   return (
     <>
-      <Container>
-        <Row>
+     <div style={{width: "100%"}}>
+        <Row >
           <Col>
-            <Card style={{ width: "18rem" }}>
+            <Card style={{ width: "100%" }} className="brdr-linkedin">
               <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
               <Card.Body>
                 <Card.Title>
@@ -67,8 +67,8 @@ const NewsFeedProfile = () => {
           </Col>
         </Row>
         <Row className="mt-3">
-          <Col md={2}>
-            <Card style={{ width: "18rem" }}>
+          <Col >
+            <Card style={{ width: "100%" }} className="brdr-linkedin">
               <Card.Body>
                 <ListGroup className="list-group-flush">
                   <ListGroupItem>
@@ -99,7 +99,7 @@ const NewsFeedProfile = () => {
             </Card>
           </Col>
         </Row>
-      </Container>
+        </div>
     </>
   );
 };
