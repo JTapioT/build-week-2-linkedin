@@ -1,4 +1,5 @@
 import Form from 'react-bootstrap/Form'
+import Dropdown from 'react-bootstrap/Dropdown'
 import Button from 'react-bootstrap/Button'
 
 const PostModal = ({ handleClose, show, children }) => {
@@ -22,8 +23,31 @@ const PostModal = ({ handleClose, show, children }) => {
 
         <div className="user-area">
           {/* img */}
-          {/* name surname */}
-          {/* button */}
+          <img
+            src="https://images.unsplash.com/photo-1613064756072-52b429a1e06f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1480&q=80"
+            style={{
+              width: "50px",
+              height: "50px",
+              borderRadius: "50%",
+            }}
+            alt="React Bootstrap logo"
+          />
+          <div className="text-area">
+            {/* name surname */}
+            <h4>Name Surname</h4>
+            {/* button */}
+              <Dropdown>
+                <Dropdown.Toggle variant="secondary" id="dropdown-basic" class="rounded-pill text-secondary ">
+                  Anyone
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item href="#/action-1">Anyone</Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">Connections Only</Dropdown.Item>
+                  <Dropdown.Item href="#/action-3">Anyone + Twitter</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+          </div>
         </div>
 
 
