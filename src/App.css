@@ -40,7 +40,7 @@ body {
 }
 
 .search {
-  max-width: 200px !important;
+  max-width: 300px !important;
 }
 
 .nav-icons svg:hover {
@@ -139,6 +139,19 @@ body {
 
 
 
+/* ALL POSTS ALL POSTS ALL POSTS */
+.text-posts span {
+  padding: 5px;
+}
+
+.text-posts span:hover {
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: rgba(212, 212, 212, 0.3);
+}
+
+
 
 /* Create Post  Create Post  Create Post  Create Post  Create Post  Create Post  Create Post  Create Post  Create Post */
 .brdr-25 {
@@ -158,6 +171,17 @@ body {
   margin-bottom: 5px;
   font-weight: 600;
 }
+
+.user-area .text-area Button {
+  background-color: transparent !important;
+}
+
+.user-area .text-area Button:hover {
+  background-color: rgba(212, 212, 212, 0.4) !important;
+}
+
+/* .user-area .text-area Dropdown{
+} */
 
 .btn-outline-secondary:hover {
   background-color: rgba(212, 212, 212, 0.3)!important;

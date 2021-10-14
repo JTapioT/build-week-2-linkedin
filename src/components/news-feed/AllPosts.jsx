@@ -56,9 +56,16 @@ class AllPosts extends React.Component {
                       className="d-inline-block align-top special-img"
                       alt="React Bootstrap logo"
                       />
-                      <div className="d-flex flex-column">
-                        <h5>{post.username}</h5>
-                        <small className="text-mute">2,346 followers</small>
+                      <div className="d-flex">
+                        <div>
+                          <h5 className="mb-1">{post.username}</h5>
+                          <small className="text-mute">2,346 followers</small>
+                        </div>
+                       <span style={{position: "absolute",right: "45px"}}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="grey" class="bi bi-three-dots" viewBox="0 0 16 16">
+                          <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                        </svg>
+                       </span>
                       </div>
                   </div>
                   <p>{post.text}</p>
