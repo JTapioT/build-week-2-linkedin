@@ -58,9 +58,7 @@ class CreatePost extends Component {
         </div>
       </div>
 
-      <CreatePostModal show={this.state.show} handleClose={this.hideModal}>
-        {/* Can pu the form here for simplicity,but not yet */}
-      </CreatePostModal>
+      <CreatePostModal show={this.state.show} handleClose={this.hideModal} />
     </>
     )
   }
