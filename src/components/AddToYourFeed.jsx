@@ -45,7 +45,7 @@ const AddToYourFeed = () => {
 
   return (
     <>
-      <div style={{width: "100%"}}>
+      <div style={{ width: "100%" }}>
         <Row>
           <Col md={3}>
             <div
@@ -64,10 +64,16 @@ const AddToYourFeed = () => {
                           />
                         </div>
                         <div className="name-company">
-                          <a href="#" className="text-dark">
+                          <Link
+                            to={`/profile/${user._id}`}
+                            className="text-dark"
+                            style={{ textDecoration: "none" }}
+                          >
                             <h6>{user.user.username} </h6>
-                          </a>
+                          </Link>
+
                           <p className="text-muted mb-1">{user.user.title}</p>
+
                           <div className="default-btn-style">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -156,7 +162,7 @@ const AddToYourFeed = () => {
         </Row>
         <Row>
           <Col md={3}>
-            <div className="mx-3 pl-5">
+            <div className="mt-3 pl-4">
               {/* <Card.Body>
               <Card.Link href="#">Groups</Card.Link>
               </Card.Body> */}
@@ -218,9 +224,10 @@ const AddToYourFeed = () => {
                         </g>
                       </svg>
                     </li-icon>
-                    <small className="text-muted serv ">Linkedin Corporation@ 2021.</small>
+                    <small className="text-muted serv ">
+                      Linkedin Corporation@ 2021.
+                    </small>
                   </figure>
-                  
                 </li>
               </ul>
             </div>
@@ -229,7 +236,7 @@ const AddToYourFeed = () => {
         <Row>
           <Col md={3}></Col>
         </Row>
-        </div>
+      </div>
     </>
   );
 };
