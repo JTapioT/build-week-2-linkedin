@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import {
   Container,
@@ -14,7 +15,7 @@ import {
 import userCircle from "../assets/abstract-user.svg";
 import gridSvg from "../assets/grid-3x3.svg";
 
-const MyNavBar = () => {
+const MyNavBar = (props) => {
   return (
     <Navbar sticky="top" expand="lg" variant="light" bg="light">
       <Container className="justify-space-between" >
@@ -49,9 +50,10 @@ const MyNavBar = () => {
 
         <div className="d-flex align-items-center">
 
-         <div
+        <div
           className="d-flex justify-space-around nav-icons align-items-center"
           style={{ borderRight: "1px solid lightgrey", cursor: "pointer" }}>
+          <Link to="/feed">
           <div
             className="d-flex flex-column mr-4 small-hover"
             style={{ alignItems: "center" }}>
@@ -67,7 +69,7 @@ const MyNavBar = () => {
             </svg>
             <small>Home</small>
           </div>
-
+          </Link>
           <div
             className="d-flex flex-column text-center mr-4"
             style={{ cursor: "pointer" }}
@@ -147,7 +149,9 @@ const MyNavBar = () => {
               style={{ cursor: "pointer" }}
               className="d-flex align-items-center"
               >
+              <Link to="/profile/me">
               <small className="p-0 m-0 text-muted">Me</small>
+              </Link>
             </Dropdown.Toggle>
             <Dropdown.Menu>
               <Dropdown.Item href="#/action-1">Action</Dropdown.Item>

@@ -16,7 +16,7 @@ function App() {
           path="/feed"
           render={(props) => (
             <>
-              <MyNavBar />
+              <MyNavBar {...props} />
               <FeedLayout {...props} />
             </>
           )}
