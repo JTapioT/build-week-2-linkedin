@@ -2,7 +2,7 @@ import React from 'react'
 import {Component} from "react";
 import Button from 'react-bootstrap/Button'
 import CreatePostModal from './CreatePostModal'
-
+import AddPost from './AddPost';
 class CreatePost extends Component {
 
   state = {
@@ -59,8 +59,10 @@ class CreatePost extends Component {
       </div>
 
       <CreatePostModal show={this.state.show} handleClose={this.hideModal}>
+      <AddPost/>
         {/* Can pu the form here for simplicity,but not yet */}
       </CreatePostModal>
+      
     </>
     )
   }

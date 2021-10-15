@@ -11,7 +11,7 @@ const PostModal = ({ handleClose, show, children }) => {
 
         {/*  CLOSE BUTTON AND TEXT  */}
         <div className="d-flex justify-content-between">
-          <h5>Create a Post</h5>
+         
           <button type="button" onClick={handleClose}>
             Close
             {/* insert icon here */}
@@ -27,15 +27,7 @@ const PostModal = ({ handleClose, show, children }) => {
         </div>
 
 
-        <div className="text-area-post-modal">
-          <Form.Group controlId="exampleForm.ControlTextarea1">
-            <Form.Control as="textarea" rows={5} style={{border: "none"}} placeholder="What do you want to talk about?"/>
-          </Form.Group>
-          <Button variant="outline-primary">
-            Add Hashtag
-          </Button>
-        </div>
-
+        
         <div className="row-of-icons">
 
           <div className="icon-text-flex">

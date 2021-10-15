@@ -56,6 +56,7 @@ const AddToYourFeed = () => {
               {selectedUsers.length
                 ? selectedUsers.map((user) => {
                     return (
+                     
                       <div className="who-and-where mb-4">
                         <div className="d-inline">
                           <img
@@ -65,7 +66,9 @@ const AddToYourFeed = () => {
                         </div>
                         <div className="name-company">
                           <a href="#" className="text-dark">
+                          <Link to={`/profile/${user.user.id}`}> 
                             <h6>{user.user.username} </h6>
+                            </Link>
                           </a>
                           <p className="text-muted mb-1">{user.user.title}</p>
                           <div className="default-btn-style">
