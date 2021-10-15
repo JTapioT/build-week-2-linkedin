@@ -95,7 +95,7 @@ class AddPost extends React.Component {
     return (
       <>
         <div className="text-area-post-modal">
-          <h5>Create a Post</h5>
+          {/* <h5>Create a Post</h5> */}
           <Form onSubmit={this.handleSubmit}>
             <Form.Group controlId="exampleForm.ControlTextarea1">
               <Form.Control
@@ -109,7 +109,7 @@ class AddPost extends React.Component {
                 onChange={this.handleChange}
               />
               <Button variant="outline-primary" type="submit">
-                Add
+                Add Hashtag
               </Button>
               <input
                 type="file"
@@ -119,8 +119,9 @@ class AddPost extends React.Component {
                 accept="image/png, image/jpeg"
               />
             </Form.Group>
-            <Button variant="outline-primary">Hashtag</Button>
+            {/* <Button variant="outline-primary">Hashtag</Button> */}
           </Form>
+
         </div>
 
         {/* <div className="App">

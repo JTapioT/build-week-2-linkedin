@@ -1,6 +1,7 @@
 import Form from 'react-bootstrap/Form'
 import Dropdown from 'react-bootstrap/Dropdown'
 import Button from 'react-bootstrap/Button'
+import AddPost from './AddPost'
 
 const PostModal = ({ handleClose, show, children }) => {
   const showHideClassName = show ? "create-post-modal display-block" : "create-post-modal display-none";
@@ -10,15 +11,18 @@ const PostModal = ({ handleClose, show, children }) => {
       <section className="create-post-modal-main">
         {children}
 
+
+
+
         {/*  CLOSE BUTTON AND TEXT  */}
         <div className="d-flex justify-content-between">
+          <h5>Create a Post</h5>
          
           <button type="button" onClick={handleClose}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z" fill="#000"/>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z" fill="#000"/>
-          </svg>
-            {/* insert icon here */}
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z" fill="#000"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z" fill="#000"/>
+            </svg>
           </button>
         </div>
 
@@ -40,7 +44,7 @@ const PostModal = ({ handleClose, show, children }) => {
             <h4>Name Surname</h4>
             {/* button */}
               <Dropdown>
-                <Dropdown.Toggle variant="secondary" id="dropdown-basic" class="rounded-pill text-secondary ">
+                <Dropdown.Toggle variant="secondary" id="dropdown-basic" class="rounded-pill text-secondary dropdown-toggle btn btn-outline-secondary" >
                   Anyone
                 </Dropdown.Toggle>
 
@@ -52,6 +56,9 @@ const PostModal = ({ handleClose, show, children }) => {
               </Dropdown>
           </div>
         </div>
+
+
+        <AddPost/>
 
 
         

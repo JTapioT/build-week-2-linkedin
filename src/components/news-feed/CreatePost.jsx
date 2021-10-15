@@ -61,7 +61,6 @@ class CreatePost extends Component {
       <hr></hr>
 
       <CreatePostModal show={this.state.show} handleClose={this.hideModal}>
-        <AddPost/>
       </CreatePostModal>
       
     </>
