@@ -34,7 +34,7 @@ function Layout(props) {
             <Row>
               <Col className="w-100">
                 {/* INSERT HERE THE COMPONENTS */}
-                <PeopleYouMayKnow />
+                <PeopleYouMayKnow history={props.history} />
               </Col>
             </Row>
           </Col>

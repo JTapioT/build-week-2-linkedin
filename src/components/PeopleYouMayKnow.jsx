@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
 
-const PeopleYouMayKnow = () => {
+const PeopleYouMayKnow = (props) => {
 
   const [selectedUsers, setSelectedUsers] = useState([])
 
@@ -75,9 +76,9 @@ const PeopleYouMayKnow = () => {
                 <img src={user.image} className="user-img-resize"/>
               </div>
               <div className="name-company">
-                <a href="#" className="text-dark">
+                <Link onClick={() => {props.history.push(`/profile/${user._id}`); props.history.go()}} className="text-dark">
                   <h6>{user.name} {user.surname}</h6>
-                </a>
+                </Link>
                 <p className="text-muted mb-1">{user.title}</p>
                   <div className="default-btn-style">
                   Connect
@@ -90,4 +91,4 @@ const PeopleYouMayKnow = () => {
     )
 }
 
-export default PeopleYouMayKnow
+export default PeopleYouMayKnow;
