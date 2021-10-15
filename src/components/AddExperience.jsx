@@ -5,6 +5,7 @@ import {
   Col,
   Form,
   FormControl,
+  FormFile
 } from "react-bootstrap";
 import BootstrapSwitchButton from "bootstrap-switch-button-react";
 import { useParams, useHistory } from "react-router-dom";
@@ -14,6 +15,7 @@ import "react-day-picker/lib/style.css";
 import { formatDate, parseDate } from "react-day-picker/moment";
 import { useFormik } from "formik";
 import * as yup from "yup";
+
 
 function AddExperience(props) {
   const validationSchema = yup.object().shape({
@@ -37,8 +39,40 @@ function AddExperience(props) {
 
   const { id } = useParams(props);
   const history = useHistory(props);
+  const [isAddMediaClicked, setAddMediaClicked] = useState(false);
+  const [file, setFile] = useState(null);
+  const [fileName, setFileName] = useState("Upload experience image");
+  const [isFileUploaded, setFileUploaded] = useState(false);
 
-  async function submitData(body) {
+  let formData = new FormData();
+
+  async function uploadImage(experienceId, file) {
+    try {
+      let response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/6163efdfa890cc0015cf07de/experiences/${experienceId}/picture`,
+        {
+          method: "POST",
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZWZkZmE4OTBjYzAwMTVjZjA3ZGUiLCJpYXQiOjE2MzM5Mzk0MjMsImV4cCI6MTYzNTE0OTAyM30.HvEFLHymbCxV8ciPWBxaABNQ2NmFcOxsgJ8xi1Hkmuk",
+          },
+          body: file,
+        }
+      );
+
+      if (response.ok) {
+        let responseData = await response.json();
+        console.log(responseData);
+        uploadImage(responseData._id, formData)
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
+  
+  async function submitData(body, file) {
     try {
       let response = await fetch(
         `https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`,
@@ -56,6 +90,9 @@ function AddExperience(props) {
       if (response.ok) {
         let responseJSON = await response.json();
         console.log(responseJSON);
+        if(isFileUploaded) {
+          uploadImage(responseJSON._id,file)
+        }
       }
     } catch (error) {
       console.log(error);
@@ -78,7 +115,7 @@ function AddExperience(props) {
       endDate: "",
     },
     onSubmit: (values) => {
-      submitData(values);
+      submitData(values, file);
       alert(JSON.stringify(values));
     },
     validationSchema: validationSchema,
@@ -234,11 +271,31 @@ function AddExperience(props) {
                     <Button
                       className="default-btn-style ml-2"
                       variant="outline-primary"
+                      onClick={() => {
+                        setAddMediaClicked(true);
+                      }}
                     >
                       {" "}
                       + Add Media
                     </Button>{" "}
-                    <div className="mt-3">
+                    {isAddMediaClicked &&
+                      <Form.Group>
+                        <FormFile
+                          type="file"
+                          id="experienceImageUpload2"
+                          label={fileName}
+                          onChange={(e) => {
+                            setFileName(e.target.files[0].name);
+                            setFileUploaded(true)
+                            formData.append("experience", e.target.files[0]);
+                            setFile(formData);
+                          }}
+                          custom
+                          style={{ width: "30vw" }}
+                        ></FormFile>
+                      </Form.Group>
+                    }
+                    <div className="mt-5">
                       <Button
                         className="default-btn-style ml-auto mr-2"
                         variant="primary"

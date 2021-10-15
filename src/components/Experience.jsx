@@ -18,7 +18,6 @@ function Experience(props) {
   };
 
   async function fetchUser() {
-    console.log(userId);
     try {
       let response = await fetch(
         `https://striveschool-api.herokuapp.com/api/profile/${
@@ -34,7 +33,6 @@ function Experience(props) {
 
       if (response.ok) {
         let responseJSON = await response.json();
-        console.log(responseJSON);
         setUserExperience(responseJSON);
       }
     } catch (error) {

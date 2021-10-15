@@ -5,11 +5,12 @@ import {
   Col,
   Form,
   FormControl,
+  FormFile,
+  Alert
 } from "react-bootstrap";
 import BootstrapSwitchButton from "bootstrap-switch-button-react";
 import { useParams, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { FormFile, Label } from "react-bootstrap";
 import DayPickerInput from "react-day-picker/DayPickerInput";
 import "react-day-picker/lib/style.css";
 import { formatDate, parseDate } from "react-day-picker/moment";
@@ -44,14 +45,15 @@ function AddExperience(props) {
   const [isAddMediaClicked, setAddMediaClicked] = useState(false);
   const [fileName, setFileName] = useState("Upload experience image");
   const [isFileUploaded, setFileUploaded] = useState(false);
+  const [file, setFile] = useState(null);
+  const [startDate, setStartDate] = useState(experience.startDate);
+  const [endDate, setEndDate] = useState(experience.endDate);
+  const [editSubmitted, setSubmitted] = useState(false);
 
-  useEffect(() => {
-    console.log(fileName);
-  }, [fileName]);
-
+  
   let formData = new FormData();
 
-  async function uploadImage(formData) {
+  async function uploadImage(file) {
 
     try {
       let response = await fetch(
@@ -61,13 +63,12 @@ function AddExperience(props) {
           headers: {
             Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZWZkZmE4OTBjYzAwMTVjZjA3ZGUiLCJpYXQiOjE2MzM5Mzk0MjMsImV4cCI6MTYzNTE0OTAyM30.HvEFLHymbCxV8ciPWBxaABNQ2NmFcOxsgJ8xi1Hkmuk",
           },
-          body: formData,
+          body: file,
         }
       );
 
       if (response.ok) {
         let responseJSON = await response.json();
-        console.log(responseJSON);
       }
     } catch (error) {
       console.log(error);
@@ -113,12 +114,13 @@ function AddExperience(props) {
       );
 
       if (isFileUploaded) {
-        uploadImage(body.formData);
+        uploadImage(file);
       }
 
       if (response.ok) {
         let responseJSON = await response.json();
         console.log(responseJSON);
+        setSubmitted(true);
       }
     } catch (error) {
       console.log(error);
@@ -157,15 +159,15 @@ function AddExperience(props) {
       company: experience.company,
       description: experience.description,
       area: experience.area,
-      startDate: experience.startDate,
-      endDate: experience.endDate,
-      formData: formData,
+      startDate: startDate,
+      endDate: endDate,
     },
     enableReinitialize: true,
     onSubmit: (values) => {
-      editExperience(values);
-      /* alert(JSON.stringify(values));
-      history.push(`/profile/${id}`);
+      editExperience(values, file);
+      alert(JSON.stringify(values));
+      setSubmitted(true);
+    /*  history.push(`/profile/${id}`);
       history.go(); */
     },
     validationSchema: validationSchema,
@@ -268,8 +270,7 @@ function AddExperience(props) {
                             dayPickerInput
                           ) => {
                             const input = dayPickerInput.getInput();
-                            /* THIS HAS TO BE BAD PRACTICE BUT IT WORKS FOR NOW */
-                            values.startDate = input.value;
+                            setStartDate(input.value);
                           }}
                           placeholder={`${formatDate(
                             new Date(experience.startDate)
@@ -289,9 +290,7 @@ function AddExperience(props) {
                             dayPickerInput
                           ) => {
                             const input = dayPickerInput.getInput();
-                            /* THIS HAS TO BE BAD PRACTICE BUT IT WORKS FOR NOW */
-                            values.endDate =
-                              input.value === "" ? null : input.value;
+                            setEndDate(input.value === "" ? null : input.value);
                           }}
                           placeholder={`${formatDate(
                             new Date(experience.endDate)
@@ -334,24 +333,29 @@ function AddExperience(props) {
                         {" "}
                         + Add Media
                       </Button>{" "}
-                      <Form.Group>
-                        <FormFile
-                          type="file"
-                          id="experienceImageUpload"
-                          label={fileName}
-                          onChange={(e) => {
-                            setFileName(e.target.files[0].name);
-                            setFileUploaded(true)
-                            console.log("HEREERRR")
-                            console.dir(e.target.files[0]);
-                            formData.append('experience', e.target.files[0]);
-                            values.formData = formData;
-                           /*  console.log(formData.getAll("experience")); */
-                          }}
-                          custom
-                          style={{ width: "30vw" }}
-                        ></FormFile>
-                      </Form.Group>
+                      {isAddMediaClicked && (
+                        <Form.Group>
+                          <FormFile
+                            type="file"
+                            id="experienceImageUpload"
+                            label={fileName}
+                            onChange={(e) => {
+                              setFileName(e.target.files[0].name);
+                              setFileUploaded(true);
+                              formData.append("experience", e.target.files[0]);
+                              setFile(formData);
+                            }}
+                            custom
+                            style={{ width: "30vw" }}
+                          ></FormFile>
+                        </Form.Group>
+                      )}
+                      {editSubmitted && (
+                        <Alert variant={"success"} className="mt-5">
+                          <h6>Information successfully submitted!</h6>
+                          
+                        </Alert>
+                      )}
                       <div className="mt-5">
                         <Button
                           className="default-btn-style ml-auto mr-2"
@@ -375,6 +379,7 @@ function AddExperience(props) {
                             deleteExperience();
                             alert("User experience deleted!");
                             history.push(`/profile/${id}`);
+                            history.go();
                           }}
                         >
                           Delete
@@ -389,6 +394,7 @@ function AddExperience(props) {
                           }
                           onClick={() => {
                             history.push(`/profile/${id}`);
+                            history.go();
                           }}
                         >
                           Close
