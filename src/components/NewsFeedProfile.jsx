@@ -34,7 +34,7 @@ const NewsFeedProfile = () => {
         <Row >
           <Col>
             <Card style={{ width: "100%" }} className="brdr-linkedin">
-              <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+              <Card.Img variant="top" src="https://wl-brightside.cf.tsp.li/resize/728x/jpg/0bb/959/ba16a05fa7b18c5f21767d2b1c.jpg" />
               <Card.Body>
                 <Card.Title>
                     <Link to="/profile/me">
