@@ -20,7 +20,7 @@ class CreatePost extends Component {
   render() {
     return(
       <>
-      <div className="brdr-linkedin " style={{width: "540px", height: "120px"}}>
+      <div className="brdr-linkedin mb-3" style={{width: "540px", height: "120px"}}>
         <div className="create-post-flex">
           <div className="user-img-resize"></div>
           <Button variant="outline-secondary" className="brdr-25 text-left" onClick={this.showModal}>Start a Post</Button>
@@ -57,6 +57,8 @@ class CreatePost extends Component {
           </div>
         </div>
       </div>
+
+      <hr></hr>
 
       <CreatePostModal show={this.state.show} handleClose={this.hideModal}>
       <AddPost/>

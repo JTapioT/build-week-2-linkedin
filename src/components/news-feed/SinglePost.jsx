@@ -18,7 +18,7 @@ class SinglePost extends React.Component {
   render () {
   return (
        <>
-       <div className="brdr-linkedin-posts">
+       <div className="brdr-linkedin-posts mb-3">
       <div className="posts-info-top">
         <div className="text-posts">
           <img
@@ -47,7 +47,8 @@ class SinglePost extends React.Component {
         <p>{this.props.post.text}</p>
         </div>
 
-      <img src="https://images.unsplash.com/photo-1524758870432-af57e54afa26?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80" style={{width: "100%"}}></img>
+      <img src="https://images.unsplash.com/photo-1524758870432-af57e54afa26?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
+       style={{width: "100%", borderBottomLeftRadius: "18px", borderBottomRightRadius: "18px"}}></img>
     </div>
        <DeletePost show={this.state.show} postInfo={this.props.post} handleClose={this.hideModal} history={this.props.history}/>
       </>

@@ -49,7 +49,7 @@ const AddToYourFeed = () => {
         <Row>
           <Col md={3}>
             <div
-              className="brdr-linkedin brdr-linked-people-you-may-know"
+              className="brdr-linkedin brdr-linked-people-you-may-know mb-3"
               style={{ width: "320px", height: "auto" }}
             >
               <h5>add to your feed</h5>
