@@ -4,6 +4,7 @@ import { useParams, useHistory } from "react-router-dom";
 function UserExperienceDetails({ history, id, experience }) {
   const [penHover, setPenHover] = useState(false);
   const [isExperienceEditClicked, setExperienceEditClicked] = useState(false);
+  const [detailsHover, setDetailsHover] = useState(false);
 
   const penStyle = {
     fontSize: "1.2em",
@@ -11,11 +12,12 @@ function UserExperienceDetails({ history, id, experience }) {
     borderRadius: "50%",
     padding: "0.4em 0.6em",
     cursor: penHover ? "pointer" : null,
-    transition: "linear 0.3s",
+    transition: "ease-out 0.3s",
+    visibility: detailsHover ? "visible" : "hidden"
   };
 
   return (
-    <div key={experience._id} className="d-flex">
+    <div key={experience._id} className="d-flex" onMouseOver={() =>{ setDetailsHover(true)}} onMouseLeave={() => {setDetailsHover(false)}}>
       <div className="mr-3 mt-2">
         <img
           src={

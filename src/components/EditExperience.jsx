@@ -167,8 +167,8 @@ function AddExperience(props) {
       editExperience(values, file);
       alert(JSON.stringify(values));
       setSubmitted(true);
-    /*  history.push(`/profile/${id}`);
-      history.go(); */
+      history.push(`/profile/${id}`);
+      history.go();
     },
     validationSchema: validationSchema,
   });
@@ -244,7 +244,7 @@ function AddExperience(props) {
                         />
                       </Form.Group>
                       <Form.Group controlId="FormLocation">
-                        <Form.Label>Location</Form.Label>
+                        <Form.Label>Location*</Form.Label>
                         <Form.Control
                           isInvalid={errors.area}
                           value={values.area}
@@ -298,7 +298,7 @@ function AddExperience(props) {
                         />
                       </div>
                       <Form.Group controlId="FormDescription">
-                        <Form.Label>Description</Form.Label>
+                        <Form.Label>Description*</Form.Label>
                         <Form.Control
                           as="textarea"
                           rows={3}
@@ -353,28 +353,26 @@ function AddExperience(props) {
                       {editSubmitted && (
                         <Alert variant={"success"} className="mt-5">
                           <h6>Information successfully submitted!</h6>
-                          
                         </Alert>
                       )}
-                      <div className="mt-5">
+                      <div className="mt-5 d-flex justify-content-around align-items-baseline">
                         <Button
-                          className="default-btn-style ml-auto mr-2"
+                          className="default-btn-style"
                           variant="primary"
                           type="submit"
                           disabled={isValid ? false : true}
-                          style={
-                            ({ color: "white" }, { backgroundColor: "blue" })
-                          }
+                          style={{color: "blue"}}
                         >
                           Save
                         </Button>
-                        <Button
+                        <p
                           data-dismiss="modal"
-                          className="default-btn-style ml-auto mr-2"
+                          className="text-muted p-0 m-0"
                           type="button"
-                          style={
+                          style={{ fontSize: "1.1em" }}
+                          /* style={
                             ({ color: "white" }, { backgroundColor: "red" })
-                          }
+                          } */
                           onClick={() => {
                             deleteExperience();
                             alert("User experience deleted!");
@@ -382,19 +380,16 @@ function AddExperience(props) {
                             history.go();
                           }}
                         >
-                          Delete
-                        </Button>
+                          Delete experience
+                        </p>
                         <Button
                           data-dismiss="modal"
-                          className="default-btn-style ml-auto"
-                          variant="primary"
+                          className="default-btn-style"
+                          variant="outline-primary"
                           type="button"
-                          style={
-                            ({ color: "white" }, { backgroundColor: "blue" })
-                          }
                           onClick={() => {
                             history.push(`/profile/${id}`);
-                            history.go();
+                           /*  history.go(); */
                           }}
                         >
                           Close
