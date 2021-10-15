@@ -3,6 +3,7 @@ import AddToYourFeed from "./AddToYourFeed";
 import AllPosts from "./news-feed/AllPosts";
 import CreatePost from "./news-feed/CreatePost";
 import NewsFeedProfile from "./NewsFeedProfile";
+import { BrowserRouter, Route, useParams } from "react-router-dom";
 
 function FeedLayout(props) {
   return (
@@ -31,8 +32,12 @@ function FeedLayout(props) {
           <Col md={3}>
             <Row>
               <Col className="w-100">
+                <BrowserRouter>
                 {/* INSERT HERE THE COMPONENTS */}
-                <AddToYourFeed/>
+                <Route path="/feed" render={(props) => (
+             
+              <AddToYourFeed {...props} /> )} />
+                </BrowserRouter>
               </Col>
             </Row>
           </Col>

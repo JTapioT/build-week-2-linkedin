@@ -7,6 +7,7 @@ import EditExperience from "./components/EditExperience";
 import NewsFeedProfile from "./components/NewsFeedProfile";
 import AddToYourFeed from "./components/AddToYourFeed";
 import FeedLayout from "./components/FeedLayout";
+import AddPost from "./components/news-feed/AddPost";
 
 function App() {
   return (
@@ -27,7 +28,8 @@ function App() {
             <>
               <MyNavBar />
               <Layout {...props} />
-
+             
+              
               <Footer />
             </>
           )}
