@@ -3,6 +3,12 @@ body {
   background-color: #F3F2EF;
 }
 
+a{
+color: black;
+ /* text-decoration: underline; */
+/* font-size:14px */
+}
+
 /* default btn styling */
 .default-btn-style{
   background-color: transparent;
