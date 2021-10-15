@@ -92,7 +92,7 @@ const UserInfoJumbotron = (props) => {
               <Row>
                 <Nav>
                   <Nav.Item>
-                    <Nav.Link>
+                    <Nav.Link className="text-primary">
                       22 Connections
                     </Nav.Link>
                   </Nav.Item>

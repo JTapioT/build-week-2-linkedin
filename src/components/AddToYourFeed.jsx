@@ -162,8 +162,8 @@ const AddToYourFeed = () => {
           </Col>
         </Row>
         <Row>
-          <Col md={3}>
-            <div className="mt-3 pl-4">
+          <Col md={12}>
+            <div className="mt-3 pl-4 " >
               {/* <Card.Body>
               <Card.Link href="#">Groups</Card.Link>
               </Card.Body> */}
